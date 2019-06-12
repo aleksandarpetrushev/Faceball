@@ -63,9 +63,9 @@ namespace Faceball.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap footballImg {
+        internal static System.Drawing.Bitmap buttonBackground {
             get {
-                object obj = ResourceManager.GetObject("footballImg", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace Faceball.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap footballImg_removebg_preview {
+        internal static System.Drawing.Bitmap gameBg {
             get {
-                object obj = ResourceManager.GetObject("footballImg-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("gameBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenuBg {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuBg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

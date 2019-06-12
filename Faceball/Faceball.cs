@@ -12,13 +12,34 @@ namespace Faceball
 {
     public partial class Faceball : Form
     {
-        Panel activePanel;
+        Panel activePanel;      //ActivePanel promenliva koja ke ja sodrzi momentalnata scena, na pocetok main menu
 
         public Faceball()
         {
             InitializeComponent();
-            activePanel = panelMainMenu;
-            activePanel.Visible = true;
+            DoubleBuffered = true;
+            activePanel = panelMainMenu;        
+            activePanel.Visible = true; 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            activePanel.Visible = false;
+            activePanel = gamePanel;            //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
+            activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
+
+        }
+
+        private void gamePanel_Paint(object sender, PaintEventArgs e)
+        {
+            //e.Graphics.DrawImage(BackgroundImage, new Point(0, 0));
+        }
+
+        
     }
 }
