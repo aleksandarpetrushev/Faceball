@@ -1,0 +1,3 @@
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.csprojAssemblyReference.cache
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.Faceball.resources
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.csproj.GenerateResource.cache
