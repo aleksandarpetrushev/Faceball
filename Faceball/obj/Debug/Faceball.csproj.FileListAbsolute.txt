@@ -1,3 +1,10 @@
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.csprojAssemblyReference.cache
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.Faceball.resources
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.csproj.GenerateResource.cache
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\bin\Debug\Faceball.exe.config
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\bin\Debug\Faceball.exe
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\bin\Debug\Faceball.pdb
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.Properties.Resources.resources
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.csproj.CoreCompileInputs.cache
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.exe
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.pdb
