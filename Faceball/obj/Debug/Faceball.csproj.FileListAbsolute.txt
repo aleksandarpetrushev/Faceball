@@ -1,0 +1,3 @@
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csprojAssemblyReference.cache
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.Faceball.resources
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csproj.GenerateResource.cache
