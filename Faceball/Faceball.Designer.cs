@@ -30,17 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faceball));
             this.panelMainMenu = new System.Windows.Forms.Panel();
-            this.lblMainMenu = new System.Windows.Forms.Label();
             this.gamePanel = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnInstructions = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
+            this.lblMainMenu = new System.Windows.Forms.Label();
             this.panelMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMainMenu
             // 
-            this.panelMainMenu.BackgroundImage = global::Faceball.Properties.Resources.MainMenuBg;
             this.panelMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMainMenu.Controls.Add(this.gamePanel);
             this.panelMainMenu.Controls.Add(this.btnExit);
@@ -52,26 +51,13 @@
             this.panelMainMenu.Size = new System.Drawing.Size(809, 451);
             this.panelMainMenu.TabIndex = 0;
             // 
-            // lblMainMenu
-            // 
-            this.lblMainMenu.BackColor = System.Drawing.Color.Transparent;
-            this.lblMainMenu.Font = new System.Drawing.Font("Jokerman", 24F, System.Drawing.FontStyle.Bold);
-            this.lblMainMenu.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMainMenu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblMainMenu.Location = new System.Drawing.Point(283, 28);
-            this.lblMainMenu.Name = "lblMainMenu";
-            this.lblMainMenu.Size = new System.Drawing.Size(220, 57);
-            this.lblMainMenu.TabIndex = 0;
-            this.lblMainMenu.Text = "Main Menu";
-            this.lblMainMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // gamePanel
             // 
             this.gamePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gamePanel.BackgroundImage")));
-            this.gamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.gamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gamePanel.Location = new System.Drawing.Point(0, 0);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(806, 448);
+            this.gamePanel.Size = new System.Drawing.Size(809, 451);
             this.gamePanel.TabIndex = 5;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
@@ -114,11 +100,24 @@
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
+            // lblMainMenu
+            // 
+            this.lblMainMenu.BackColor = System.Drawing.Color.Transparent;
+            this.lblMainMenu.Font = new System.Drawing.Font("Jokerman", 24F, System.Drawing.FontStyle.Bold);
+            this.lblMainMenu.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblMainMenu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblMainMenu.Location = new System.Drawing.Point(283, 28);
+            this.lblMainMenu.Name = "lblMainMenu";
+            this.lblMainMenu.Size = new System.Drawing.Size(220, 57);
+            this.lblMainMenu.TabIndex = 0;
+            this.lblMainMenu.Text = "Main Menu";
+            this.lblMainMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Faceball
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 450);
+            this.ClientSize = new System.Drawing.Size(886, 507);
             this.Controls.Add(this.panelMainMenu);
             this.Name = "Faceball";
             this.Text = "Form1";
