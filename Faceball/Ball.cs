@@ -29,9 +29,29 @@ namespace Faceball
 			this.player = player;
 		}
 
-		public void Move()
+		public void Move(int left, int top, int width, int height, bool isShoot)
 		{
+			if (isShoot)
+			{
 
+			}
+			else
+			{
+
+			}
+			float nextX = Center.X + velocityX;
+			float nextY = Center.Y + velocityY;
+			if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
+			{
+				velocityX = -velocityX;
+			}
+			if (nextY - RADIUS <= top || nextY + RADIUS >= height + top)
+			{
+				velocityY = -velocityY;
+			}
+			Center = new Point((int)(Center.X + velocityX), (int)(Center.Y + velocityY));
 		}
+
+
 	}
 }
