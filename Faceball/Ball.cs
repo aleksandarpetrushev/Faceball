@@ -29,9 +29,9 @@ namespace Faceball
 			this.player = player;
 		}
 
-		public void Move(int left, int top, int width, int height, bool isShoot)
+		public void Move(int left, int top, int width, int height)
 		{
-			if (isShoot)
+			if (EVodena)
 			{
 
 			}
