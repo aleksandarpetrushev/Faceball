@@ -32,7 +32,6 @@ namespace Faceball
             activePanel.Visible = false;
             activePanel = gamePanel;            //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
             activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
-
         }
 
         private void gamePanel_Paint(object sender, PaintEventArgs e)
