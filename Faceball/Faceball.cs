@@ -13,13 +13,15 @@ namespace Faceball
     public partial class Faceball : Form
     {
         Panel activePanel;      //ActivePanel promenliva koja ke ja sodrzi momentalnata scena, na pocetok main menu
-
+		Scene scene;
         public Faceball()
         {
             InitializeComponent();
             DoubleBuffered = true;
             activePanel = panelMainMenu;        
-            activePanel.Visible = true; 
+            activePanel.Visible = true;
+			//Treba panel za vnesuvanje na WinScore
+			//scene = new Scene();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -32,12 +34,12 @@ namespace Faceball
             activePanel.Visible = false;
             activePanel = gamePanel;            //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
             activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
-
         }
 
         private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.DrawImage(BackgroundImage, new Point(0, 0));
+			//Da se stavi slikata za pozadina
+			//this.BackgroundImage = Properties.Resources.FootbalField;
         }
 
         
