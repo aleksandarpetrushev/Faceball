@@ -13,13 +13,15 @@ namespace Faceball
     public partial class Faceball : Form
     {
         Panel activePanel;      //ActivePanel promenliva koja ke ja sodrzi momentalnata scena, na pocetok main menu
-
+		Scene scene;
         public Faceball()
         {
             InitializeComponent();
             DoubleBuffered = true;
             activePanel = panelMainMenu;        
-            activePanel.Visible = true; 
+            activePanel.Visible = true;
+			//Treba panel za vnesuvanje na WinScore
+			//scene = new Scene();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -29,61 +31,17 @@ namespace Faceball
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            panelMainMenu.Visible = false;
+            activePanel.Visible = false;
             activePanel = gamePanel;            //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
             activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
         }
 
         private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.DrawImage(, new Point(0, 0));
+			//Da se stavi slikata za pozadina
+			//this.BackgroundImage = Properties.Resources.FootbalField;
         }
 
-        private void saveFile()
-        {
-            if (FileName == null)
-            {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Faceball doc file (*.fcb)|*.fcb";
-                saveFileDialog.Title = "Save Faceball file";
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    FileName = saveFileDialog.FileName;
-                }
-            }
-            if (FileName != null)
-            {
-                using (FileStream fileStream = new FileStream(FileName, FileMode.Create))
-                {
-                    IFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(fileStream, linesDoc);
-                }
-            }
-        }
-        private void openFile()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Faceball doc file (*.fcb)|*.fcb";
-            openFileDialog.Title = "Open Faceball file";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                FileName = openFileDialog.FileName;
-                try
-                {
-                    using (FileStream fileStream = new FileStream(FileName, FileMode.Open))
-                    {
-                        IFormatter formater = new BinaryFormatter();
-                        linesDoc = (LinesDoc)formater.Deserialize(fileStream);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Could not read file: " + FileName);
-                    FileName = null;
-                    return;
-                }
-                Invalidate(true);
-            }
-        }
+        
     }
 }
