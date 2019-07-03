@@ -8,3 +8,10 @@ C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.Properties.
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.csproj.CoreCompileInputs.cache
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.exe
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.pdb
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csprojAssemblyReference.cache
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.Faceball.resources
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.Properties.Resources.resources
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csproj.GenerateResource.cache
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csproj.CoreCompileInputs.cache
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.exe
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.pdb
