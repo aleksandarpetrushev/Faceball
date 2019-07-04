@@ -137,7 +137,9 @@ namespace Faceball
 
         public void Draw(Graphics g)
         {
-            g.DrawIcon(Icon, Center.X, Center.Y);
+			Brush b = new SolidBrush(Color.Red);
+			g.FillEllipse(b, Center.X, Center.Y, RADIUS, RADIUS);
+            //g.DrawIcon(Icon, Center.X, Center.Y);
         }
     }
 }

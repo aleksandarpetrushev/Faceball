@@ -41,7 +41,7 @@ namespace Faceball
 			Velocity = 20;
 		}
 
-		public void Move(int left, int top, int width, int height, bool isShoot)
+		public void Move(int left, int top, int width, int height)
 		{
 			
 				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
