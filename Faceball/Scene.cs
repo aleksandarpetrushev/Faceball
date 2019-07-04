@@ -64,7 +64,7 @@ namespace Faceball
                 Ball.EVodena = true;        //ako dojdat do topkata, pocnuvaat da ja vodat
                 Ball.player = Player1;
             }
-            if (Ball.IsColliding(Player2))
+            if (Ball.IsColiding(Player2))
             {
                 Ball.EVodena = true;
                 Ball.player = Player2;

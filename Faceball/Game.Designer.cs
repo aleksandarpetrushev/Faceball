@@ -28,21 +28,28 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// Game
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::Faceball.Properties.Resources.Field;
-			this.ClientSize = new System.Drawing.Size(1091, 736);
-			this.Name = "Game";
-			this.Text = "Game";
-			this.Load += new System.EventHandler(this.Game_Load);
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // timerUpdate
+            // 
+            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            // 
+            // Game
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Faceball.Properties.Resources.Field;
+            this.ClientSize = new System.Drawing.Size(1091, 736);
+            this.Name = "Game";
+            this.Text = "Game";
+            this.ResumeLayout(false);
 
 		}
 
-		#endregion
-	}
+        #endregion
+
+        private System.Windows.Forms.Timer timerUpdate;
+    }
 }
