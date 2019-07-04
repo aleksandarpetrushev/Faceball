@@ -30,6 +30,7 @@ namespace Faceball
 			Player2 = new Player();
 			Player2.Center = new Point(967, 369);
 			Ball = new Ball(CourtCenter);
+			Player.Ball = Ball;
         }
 
         public void Draw(Graphics g)
@@ -50,17 +51,26 @@ namespace Faceball
 			if (Ball.EVodena)
 			{
 				Ball.player = Player1;
-				goal = Ball.Move(left, top, width, height);
+				Player1.VodiTopka = true;
+			}
+			else
+			{
+				Player1.VodiTopka = false;
 			}
 			Ball.EVodena = Ball.IsColiding(Player2);
 			if (Ball.EVodena)
 			{
 				Ball.player = Player2;
-				goal = Ball.Move(left, top, width, height);
+				Player2.VodiTopka = true;
+			}
+			else
+			{
+				Player2.VodiTopka = false;
 			}
 
-			
-            if (goal == 2)  //Score za Desniot Player (Player 2)
+			goal = Ball.Move(left, top, width, height);
+
+			if (goal == 2)  //Score za Desniot Player (Player 2)
             {
                 ScorePlayer2++;
                 if (ScorePlayer2 == WinScore)

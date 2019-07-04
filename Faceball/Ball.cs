@@ -12,8 +12,8 @@ namespace Faceball
     {
         public static int RADIUS = 15;
         public Point Position { get; set; }
-		private double velocityX;
-		private double velocityY;
+		public double velocityX { get; set; }
+		public double velocityY { get; set; }
 		public double Velocity { get; set; }
 		public bool IsMoving { get; set; }
 		public bool EVodena { get; set; }
@@ -35,7 +35,6 @@ namespace Faceball
 		public Ball(Point position)
 		{
             Position = position;
-
 			Velocity = 0;
 		}
 		public void Shoot()
@@ -47,7 +46,7 @@ namespace Faceball
 
 		public int Move(int left, int top, int width, int height)
 		{
-			
+
 			//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
 			if (EVodena)
 			{
@@ -57,34 +56,55 @@ namespace Faceball
 			}
 			else
 			{
+				if ((velocityX < 0))
+				{
+					velocityX += 0.5;
+				}
+				else if (velocityX > 0)
+				{
+					velocityX -= 0.5;
+				}
+				if ((velocityY < 0))
+				{
+					velocityY += 0.5;
+				}
+				else if (velocityY > 0)
+				{
+					velocityY -= 0.5;
+				}
+
 				if (Velocity == 0)
 				{
 					IsMoving = false;
 				}
 				if (IsMoving)
 				{
-					//Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
-					//Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
-						
-					Velocity--;
-						
-				}
-					
+                    //Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
+                    //Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
+                    velocityX = player.velocityX;
+                    velocityY = player.velocityY;
+                }
+
 			}
 
-            //74 322
-            //76 414
-            //41 413
-            //41 325
+			//74 322
+			//76 414
+			//41 413
+			//41 325
 
-            //986 325
-            //987 414
-            //1015 411
-            //1020 324
+			//986 325
+			//987 414
+			//1015 411
+			//1020 324
 
-            double nextX = Position.X + velocityX;
-			double nextY = Position.Y + velocityY;
-            if (nextY <= 414 && nextY >= 323 && nextX <= 75)
+			int nextX = (int)(Position.X + velocityX);
+			int nextY = (int)(Position.Y + velocityY);
+			int lft = left + RADIUS;
+			int rgt = left + width - RADIUS;
+			int tp = top + RADIUS;
+			int btm = top + height - RADIUS;
+
+			if (nextY <= 414 && nextY >= 323 && nextX <= 75)
             {
                 //goal player 2
                 return 2;
@@ -95,16 +115,30 @@ namespace Faceball
                 return 1;
             }
             else
-			{ 
-			    if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
-			    {
-				    velocityX = -velocityX;
-			    }
-			    if (nextY - RADIUS <= top || nextY + RADIUS >= height + top)
-			    {
-				    velocityY = -velocityY;
-			    }
-                Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+			{
+				if (nextX <= lft)
+				{
+					nextX = lft + (lft - nextX);
+					velocityX = -velocityX;
+				}
+				if (nextX >= rgt)
+				{
+					nextX = rgt - (nextX - rgt);
+					velocityX = -velocityX;
+
+				}
+				if (nextY <= tp)
+				{
+					nextY = tp + (tp - nextY);
+					velocityY = -velocityY;
+				}
+				if (nextY >= btm)
+				{
+					nextY = btm - (nextY - btm);
+					velocityY = -velocityY;
+				}
+				Position = new Point(nextX, nextY);
+
             }
             return 0;
 		}
