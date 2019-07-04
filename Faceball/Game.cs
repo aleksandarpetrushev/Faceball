@@ -105,41 +105,41 @@ namespace Faceball
         {
             if (e.KeyCode == Keys.Up)
             {
-                scene.Player1.MoveUp();
+                scene.Player1.MovingUp = true;
             }
-            else if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
-                scene.Player1.MoveDown();
+                scene.Player1.MovingDown = true;
             }
-            else if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left)
             {
-                scene.Player1.MoveLeft();
+                scene.Player1.MovingLeft = true;
             }
-            else if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right)
             {
-                scene.Player1.MoveRight();
+                scene.Player1.MovingRight = true;
             }
-            else if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 scene.Ball.Shoot();
             }
-            else if (e.KeyCode == Keys.W)
+            if (e.KeyCode == Keys.W)
             {
-                scene.Player2.MoveUp();
+                scene.Player2.MovingUp = true;
             }
-            else if (e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.S)
             {
-                scene.Player2.MoveDown();
+                scene.Player2.MovingDown = true;
             }
-            else if (e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A)
             {
-                scene.Player2.MoveLeft();
+                scene.Player2.MovingLeft = true;
             }
-            else if (e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D)
             {
-                scene.Player2.MoveRight();
+                scene.Player2.MovingRight = true;
             }
-            else if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 scene.Ball.Shoot();
             }
@@ -161,5 +161,50 @@ namespace Faceball
 		{
 			scene.Draw(e.Graphics);
 		}
-	}
+
+        private void Game_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                scene.Player1.MovingUp = false;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                scene.Player1.MovingDown = false;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                scene.Player1.MovingLeft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                scene.Player1.MovingRight = false;
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                scene.Ball.Shoot();
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                scene.Player2.MovingUp = false;
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                scene.Player2.MovingDown = false;
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                scene.Player2.MovingLeft = false;
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                scene.Player2.MovingRight = false;
+            }
+            if (e.KeyCode == Keys.Space)
+            {
+                scene.Ball.Shoot();
+            }
+            Invalidate(true);
+        }
+    }
 }

@@ -28,8 +28,12 @@ namespace Faceball
 		public bool VodiTopka { get; set; }
         public double Angle { get; set; }
         public bool isMoving { get; set; }
+        public bool MovingUp { get; set; }
+        public bool MovingDown { get; set; }
+        public bool MovingLeft { get; set; }
+        public bool MovingRight { get; set; }
 
-		public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
+        public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
 		{
 			Center = center;
 			Icon = icon;
@@ -87,7 +91,7 @@ namespace Faceball
 				{
 					velocityY-=0.5;
 				}
-				Console.WriteLine("VO MOVE");
+
 				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
 				double nextX = Center.X + velocityX;
 				double nextY = Center.Y + velocityY;
@@ -114,8 +118,15 @@ namespace Faceball
 				}
 				Center = new Point((int)nextX, (int)nextY);
 				isMoving = false;
-			
-			
+
+            if (MovingDown)
+                MoveDown();
+            if (MovingUp)
+                MoveUp();
+            if (MovingLeft)
+                MoveLeft();
+            if (MovingRight)
+                MoveRight();
 			
 				if(Velocity - 0.5 > 0) Velocity -= 0.5;
 			
