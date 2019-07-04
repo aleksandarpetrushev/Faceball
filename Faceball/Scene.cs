@@ -25,6 +25,14 @@ namespace Faceball
         {
             this.WinScore = WinScore;
             ScorePlayer1 = ScorePlayer2 = 0;
+			Player1 = new Player();
+			Player1.Center = new Point(50, 300);
+			Player2 = new Player();
+			Player1.Center = new Point(900, 300);
+			Ball = new Ball();
+			
+			Goal1 = new Goal(); 
+			Goal2 = new Goal(); 
         }
 
         public void Draw(Graphics g)

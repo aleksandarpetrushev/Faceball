@@ -32,7 +32,16 @@ namespace Faceball
 			this.player = player;
 		}
 
-		public void Move(int left, int top, int width, int height)
+		public Ball()
+		{
+			Velocity = 0;
+		}
+		public void Shoot()
+		{
+			Velocity = 20;
+		}
+
+		public void Move(int left, int top, int width, int height, bool isShoot)
 		{
 			
 				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
@@ -58,9 +67,6 @@ namespace Faceball
 					
 				}
 
-			
-			velocityX = (float)(Math.Cos(Angle) * Velocity);
-			velocityY = (float)(Math.Sin(Angle) * Velocity);
 			float nextX = Position.X + velocityX;
 			float nextY = Position.Y + velocityY;
 			if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)

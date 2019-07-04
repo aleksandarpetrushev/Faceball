@@ -23,13 +23,22 @@ namespace Faceball
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
-        }
+			newGame();
+		}
 
-        //@13ks4nd4r wr0t3 t|-|1s
-		//KOMENTAR
-        //komentar #2
+		public void newGame()
+		{
+			scene = new Scene(3);
+			scene.Ball.Position = new Point(500, 300);
 
-        private void saveFile()
+		}
+
+		private void timerUpdate_Tick(object sender, EventArgs e)
+		{
+			scene.UpdateScene(50, 10, 500, 300, false);
+		}
+
+		private void saveFile()
         {
             if (FileName == null)
             {
