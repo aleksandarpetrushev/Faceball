@@ -44,17 +44,17 @@ namespace Faceball
             Ball.Draw(g);
         }
 
-        public bool UpdateScene(int left, int top, int width, int height, bool isShoot)
+        public int UpdateScene(int left, int top, int width, int height)
         {
             Player1.Move(left, top, width, height);
             Player2.Move(left, top, width, height);
-            Ball.Move(left, top, width, height, isShoot);
+            Ball.Move(left, top, width, height);
             if (Goal1.IsGoal(Ball.Position))  //Score za Desniot Player (Player 2)
             {
                 ScorePlayer2++;
                 if (ScorePlayer2 == WinScore)
                 {
-                    return true;
+                    return 2;
                 }
                 Ball.Position = CourtCenter;
             }
@@ -63,7 +63,7 @@ namespace Faceball
                 ScorePlayer1++;
                 if (ScorePlayer1 == WinScore)
                 {
-                    return true;
+                    return 1;
                 }
                 Ball.Position = CourtCenter;
             }
@@ -77,7 +77,7 @@ namespace Faceball
                 Ball.EVodena = true;
                 Ball.player = Player2;
             }
-            return false;
+            return 0;
         }
     }
 }

@@ -85,7 +85,19 @@ namespace Faceball
             }
         }
 
-        
+        private void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            int who = scene.UpdateScene(50, 10, 500, 300);
+            if (who == 1)
+            {
+                MessageBox.Show("Player 1 Wins");
+            }
+            if (who == 2)
+            {
+                MessageBox.Show("Player 2 Wins");
+            }
+            Invalidate(true);
+        }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
@@ -93,16 +105,6 @@ namespace Faceball
             {
                 scene.Player1.MoveUp();
             }
-        }
-
-		private void Game_Paint(object sender, PaintEventArgs e)
-		{
-			scene.Draw(e.Graphics);
-		}
-
-		private void Game_MouseUp(object sender, MouseEventArgs e)
-		{
-			Console.WriteLine(e.Location);
-		}
-	}
+        } 
+    }
 }
