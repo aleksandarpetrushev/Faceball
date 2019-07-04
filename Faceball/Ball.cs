@@ -34,21 +34,7 @@ namespace Faceball
 
 		public void Move(int left, int top, int width, int height, bool isShoot)
 		{
-			if (isShoot)
-			{
-				//Ednas se shutira 
-				if(Velocity == 0)
-				{
-					IsMoving = false;
-				}
-				else
-				{
-					IsMoving = true;
-				}
-				
-			}
-			else
-			{
+			
 				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
 				if (EVodena)
 				{
@@ -72,7 +58,7 @@ namespace Faceball
 					
 				}
 
-			}
+			
 			velocityX = (float)(Math.Cos(Angle) * Velocity);
 			velocityY = (float)(Math.Sin(Angle) * Velocity);
 			float nextX = Position.X + velocityX;
