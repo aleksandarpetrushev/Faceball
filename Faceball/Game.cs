@@ -85,7 +85,8 @@ namespace Faceball
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
-            int who = scene.UpdateScene(50, 10, 500, 300);
+            int who = scene.UpdateScene(74, 63, 900, 600);
+
             if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
@@ -107,39 +108,39 @@ namespace Faceball
             {
                 scene.Player1.MoveUp();
             }
-            if (e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down)
             {
                 scene.Player1.MoveDown();
             }
-            if (e.KeyCode == Keys.Left)
+            else if (e.KeyCode == Keys.Left)
             {
                 scene.Player1.MoveLeft();
             }
-            if (e.KeyCode == Keys.Right)
+            else if (e.KeyCode == Keys.Right)
             {
                 scene.Player1.MoveRight();
             }
-            if (e.KeyCode == Keys.Enter)
+            else if (e.KeyCode == Keys.Enter)
             {
                 scene.Ball.Shoot();
             }
-            if (e.KeyCode == Keys.W)
+            else if (e.KeyCode == Keys.W)
             {
                 scene.Player2.MoveUp();
             }
-            if (e.KeyCode == Keys.S)
+            else if (e.KeyCode == Keys.S)
             {
                 scene.Player2.MoveDown();
             }
-            if (e.KeyCode == Keys.A)
+            else if (e.KeyCode == Keys.A)
             {
                 scene.Player2.MoveLeft();
             }
-            if (e.KeyCode == Keys.D)
+            else if (e.KeyCode == Keys.D)
             {
                 scene.Player2.MoveRight();
             }
-            if (e.KeyCode == Keys.Space)
+            else if (e.KeyCode == Keys.Space)
             {
                 scene.Ball.Shoot();
             }
@@ -156,10 +157,14 @@ namespace Faceball
         {
             Console.WriteLine(e.X + " " + e.Y);
         }
-    }
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
 			scene.Draw(e.Graphics);
+		}
+
+		private void Game_KeyUp(object sender, KeyEventArgs e)
+		{
+			scene.DecreaseVelocity();
 		}
 	}
 }

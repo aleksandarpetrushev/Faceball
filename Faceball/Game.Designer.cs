@@ -96,6 +96,7 @@ namespace Faceball
 			this.Text = "Game";
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
 			this.panelScore.ResumeLayout(false);
 			this.panelScore.PerformLayout();
 			this.ResumeLayout(false);

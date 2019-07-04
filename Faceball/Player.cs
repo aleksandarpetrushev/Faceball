@@ -14,12 +14,16 @@ namespace Faceball
     [Serializable]
 	public class Player
     {
-        public static int MAX_VELOCITY = 20;
+        public static int MAX_VELOCITY = 10;
+        public static int left = 74;
+        public static int top = 63;
+        public static int width = 900;
+        public static int height = 600;
         public static int RADIUS = 25;
         public Point Center { get; set; }
         public Icon Icon { get; set; }
-        public float velocityX { get; set; }
-        public float velocityY { get; set; }
+        public double velocityX { get; set; }
+        public double velocityY { get; set; }
 		public double Velocity { get; set; }
 		public bool VodiTopka { get; set; }
         public double Angle { get; set; }
@@ -40,42 +44,53 @@ namespace Faceball
 		public Player()
         {
 			Velocity = 0;
+			velocityX = 0;
+			velocityY = 0;
         }
 
         public void MoveUp()
         {
-            velocityY -= 5;
+            velocityY -= 0.5;
 			isMoving = true;
-			Console.WriteLine("VO MOVE UP" + isMoving);
-        }
+			Move();
+		}
 
         public void MoveDown()
         {
-            velocityY += 5;
+            velocityY += 0.5;
 			isMoving = true;
+			Move();
 		}
 
         public void MoveRight()
         {
-            velocityX += 5;
+            velocityX += 0.5;
 			isMoving = true;
-
+			Move();
 		}
 
         public void MoveLeft()
         {
-            velocityX -= 5;
+            velocityX -= 0.5;
 			isMoving = true;
+			Move();
 		}
 
-        public void Move(int left, int top, int width, int height)
+        public void Move()
         {
-            if (isMoving)
-            {
+            
+				if(velocityX > MAX_VELOCITY)
+				{
+					velocityX-=0.5;
+				}
+				if (velocityY > MAX_VELOCITY)
+				{
+					velocityY-=0.5;
+				}
 				Console.WriteLine("VO MOVE");
 				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
-				float nextX = Center.X + velocityX;
-				float nextY = Center.Y + velocityY;
+				double nextX = Center.X + velocityX;
+				double nextY = Center.Y + velocityY;
 				int lft = left + RADIUS;
 				int rgt = left + width - RADIUS;
 				int tp = top + RADIUS;
@@ -95,15 +110,15 @@ namespace Faceball
 				}
 				if (nextY >= btm)
 				{
-					nextY = Center.Y;	
+					nextY = Center.Y;
 				}
 				Center = new Point((int)nextX, (int)nextY);
 				isMoving = false;
-			}
-			else
-			{
+			
+			
+			
 				if(Velocity - 0.5 > 0) Velocity -= 0.5;
-			}
+			
         }
 
         public bool Shoot()
@@ -119,16 +134,25 @@ namespace Faceball
 
         public void DecreaseVelocity()
         {
-            if (!isMoving)
-            {
-                velocityX -= 3;
-                velocityY -= 3;
-                if (velocityX < 0)
-                    velocityX = 0;
-                if (velocityY < 0)
-                    velocityY = 0;
-            }
-        }
+			if ((velocityX < 0))
+			{
+				velocityX += 0.5;
+			}
+			else if (velocityX > 0)
+			{
+				velocityX -= 0.5;
+			}
+			if ((velocityY < 0))
+			{
+				velocityY += 0.5;
+			}
+			else if (velocityY > 0)
+			{
+				velocityY -= 0.5;
+			}
+
+
+		}
 
         public void IncreaseVelocity()
         {
