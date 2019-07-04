@@ -48,8 +48,8 @@ namespace Faceball
         {
             Player1.Move(left, top, width, height);
             Player2.Move(left, top, width, height);
-            Ball.Move(left, top, width, height);
-            if (Goal1.IsGoal(Ball.Position))  //Score za Desniot Player (Player 2)
+            int goal = Ball.Move(left, top, width, height);
+            if (goal == 2)  //Score za Desniot Player (Player 2)
             {
                 ScorePlayer2++;
                 if (ScorePlayer2 == WinScore)
@@ -58,7 +58,7 @@ namespace Faceball
                 }
                 Ball.Position = CourtCenter;
             }
-            if (Goal2.IsGoal(Ball.Position)) //Score za leviot player (Player 1) 
+            if (goal == 1) //Score za leviot player (Player 1) 
             {
                 ScorePlayer1++;
                 if (ScorePlayer1 == WinScore)

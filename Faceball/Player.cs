@@ -45,21 +45,25 @@ namespace Faceball
         public void MoveUp()
         {
             velocityY -= 5;
+            isMoving = true;
         }
 
         public void MoveDown()
         {
             velocityY += 5;
+            isMoving = true;
         }
 
         public void MoveRight()
         {
             velocityX += 5;
+            isMoving = true;
         }
 
         public void MoveLeft()
         {
             velocityX -= 5;
+            isMoving = true;
         }
 
         public void Move(int left, int top, int width, int height)

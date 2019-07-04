@@ -24,6 +24,7 @@ namespace Faceball
             DoubleBuffered = true;
             FileName = null;
 			newGame();
+            timerUpdate.Start();
 		}
 
 		public void newGame()
@@ -31,11 +32,6 @@ namespace Faceball
 			scene = new Scene(3);
 			scene.Ball.Position = new Point(500, 300);
 
-		}
-
-		private void timerUpdate_Tick(object sender, EventArgs e)
-		{
-			scene.UpdateScene(50, 10, 500, 300, false);
 		}
 
 		private void saveFile()
