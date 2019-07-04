@@ -16,10 +16,10 @@ namespace Faceball
     {
         public static int MAX_VELOCITY = 10;
         public static int left = 74;
-        public static int top = 63;
-        public static int width = 900;
-        public static int height = 600;
-        public static int RADIUS = 25;
+        public static int top = 65;
+        public static int width = 911;
+        public static int height = 606;
+        public static int RADIUS = 12;
         public Point Center { get; set; }
         public Icon Icon { get; set; }
         public double velocityX { get; set; }
@@ -120,10 +120,6 @@ namespace Faceball
 			}
 			Center = new Point((int)nextX, (int)nextY);
 			isMoving = false;
-
-            
-			
-			if(Velocity - 0.5 > 0) Velocity -= 0.5;
 			
         }
 
@@ -158,6 +154,7 @@ namespace Faceball
 			}
 
 
+
 		}
 
         public void IncreaseVelocity()
@@ -176,7 +173,7 @@ namespace Faceball
         public void Draw(Graphics g)
         {
 			Brush b = new SolidBrush(Color.Red);
-			g.FillEllipse(b, Center.X, Center.Y, RADIUS, RADIUS);
+			g.FillEllipse(b, Center.X-RADIUS, Center.Y-RADIUS, 2*RADIUS, 2*RADIUS);
             b.Dispose();
             //g.DrawIcon(Icon, Center.X, Center.Y);
         }

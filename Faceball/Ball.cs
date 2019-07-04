@@ -12,8 +12,8 @@ namespace Faceball
     {
         public static int RADIUS = 15;
         public Point Position { get; set; }
-		private float velocityX;
-		private float velocityY;
+		private double velocityX;
+		private double velocityY;
 		public double Velocity { get; set; }
 		public bool IsMoving { get; set; }
 		public bool EVodena { get; set; }
@@ -35,11 +35,12 @@ namespace Faceball
 		public Ball(Point position)
 		{
             Position = position;
+
 			Velocity = 0;
 		}
 		public void Shoot()
 		{
-			Velocity = 20;
+			//Velocity = 20;
             EVodena = false;
             player = null;
 		}
@@ -47,28 +48,29 @@ namespace Faceball
 		public int Move(int left, int top, int width, int height)
 		{
 			
-				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
-				if (EVodena)
+			//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
+			if (EVodena)
+			{
+				//Ako e vodena togas zemi velocity od playerot
+				velocityX = player.velocityX;
+				velocityY = player.velocityY;
+			}
+			else
+			{
+				if (Velocity == 0)
 				{
-					//Ako e vodena togas zemi velocity od playerot
-					Velocity = player.Velocity;
+					IsMoving = false;
 				}
-				else
+				if (IsMoving)
 				{
-					if (Velocity == 0)
-					{
-						IsMoving = false;
-					}
-					if (IsMoving)
-					{
-						//Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
-						//Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
+					//Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
+					//Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
 						
-						Velocity--;
+					Velocity--;
 						
-					}
+				}
 					
-				}
+			}
 
             //74 322
             //76 414
@@ -80,8 +82,8 @@ namespace Faceball
             //1015 411
             //1020 324
 
-            float nextX = Position.X + velocityX;
-			float nextY = Position.Y + velocityY;
+            double nextX = Position.X + velocityX;
+			double nextY = Position.Y + velocityY;
             if (nextY <= 414 && nextY >= 323 && nextX <= 75)
             {
                 //goal player 2
@@ -92,7 +94,8 @@ namespace Faceball
                 //goal player 1
                 return 1;
             }
-            else { 
+            else
+			{ 
 			    if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
 			    {
 				    velocityX = -velocityX;
@@ -109,7 +112,7 @@ namespace Faceball
 		public void Draw(Graphics g)
 		{
 			Brush brush = new SolidBrush(Color.Red);
-			g.FillEllipse(brush, Position.X - RADIUS, Position.Y - RADIUS, RADIUS * 2, RADIUS * 2);
+			g.FillEllipse(brush, Position.X-RADIUS, Position.Y-RADIUS, 2*RADIUS, 2*RADIUS);
 			brush.Dispose();
 		}
 

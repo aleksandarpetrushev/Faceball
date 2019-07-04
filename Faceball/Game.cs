@@ -21,7 +21,6 @@ namespace Faceball
         public Game()
 		{
 			scene = new Scene(3);
-			scene.Ball.Position = new Point(530, 368);
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
@@ -32,7 +31,6 @@ namespace Faceball
 		public void newGame()
 		{
 			scene = new Scene(3);
-			scene.Ball.Position = new Point(500, 300);
 
 		}
 		private void saveFile()
@@ -102,7 +100,7 @@ namespace Faceball
 			if (scene.Player2.MovingRight)
 				scene.Player2.MoveRight();
 
-			int who = scene.UpdateScene(74, 63, 900, 600);
+			int who = scene.UpdateScene(74, 65, 911, 606);
 			
 			if (who == 1)
             {
@@ -224,5 +222,10 @@ namespace Faceball
             }
             Invalidate(true);
         }
-    }
+
+		private void Game_MouseClick_1(object sender, MouseEventArgs e)
+		{
+			Console.WriteLine(e.X + " " + e.Y);
+		}
+	}
 }
