@@ -25,7 +25,7 @@ namespace Faceball
             FileName = null;
         }
 
-		// R.T. WROTE THIS 
+        //@13ks4nd4r wr0t3 t|-|1s
 
         private void saveFile()
         {
@@ -76,7 +76,15 @@ namespace Faceball
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
-            scene.UpdateScene(50, 10, );
+            scene.UpdateScene(50, 10, 500, 300, false);
         }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+
+            }
+        } 
     }
 }
