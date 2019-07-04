@@ -87,17 +87,17 @@ namespace Faceball
 
 			}
 
-			//74 322
-			//76 414
-			//41 413
-			//41 325
+            //74 322
+            //76 414
+            //41 413
+            //41 325
 
-			//986 325
-			//987 414
-			//1015 411
-			//1020 324
+            //986 325
+            //987 414
+            //1015 411
+            //1020 324
 
-			int nextX = (int)(Position.X + velocityX);
+            int nextX = (int)(Position.X + velocityX);
 			int nextY = (int)(Position.Y + velocityY);
 			int lft = left + RADIUS;
 			int rgt = left + width - RADIUS;
