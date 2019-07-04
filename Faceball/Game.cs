@@ -29,6 +29,8 @@ namespace Faceball
 		//KOMENTAR
         //komentar #2
 
+		//KOMENTAR VO MASTER SO COMIT
+
         private void saveFile()
         {
             if (FileName == null)
