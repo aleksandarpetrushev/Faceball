@@ -104,7 +104,7 @@ namespace Faceball
 
 			if (VodiTopka)
 			{
-				Ball.Position = new Point((int)nextX + (RADIUS), (int)nextY + (RADIUS));
+				Ball.Position = new Point((int)(nextX + (velocityX)), (int)(nextY + velocityY));
 			}
 
 			if (nextX <= lft)

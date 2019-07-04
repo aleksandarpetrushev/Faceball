@@ -40,8 +40,16 @@ namespace Faceball
 		public void Shoot()
 		{
 			//Velocity = 20;
-            EVodena = false;
-            player = null;
+			if(player != null)
+			{
+
+				EVodena = false;
+				player.VodiTopka = false;
+				velocityX = 3 * velocityX;
+				velocityY = 3 * velocityY;
+				Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+				player = null;
+			}
 		}
 
 		public int Move(int left, int top, int width, int height)
@@ -73,31 +81,22 @@ namespace Faceball
 					velocityY -= 0.5;
 				}
 
-				if (Velocity == 0)
-				{
-					IsMoving = false;
-				}
-				if (IsMoving)
-				{
-                    //Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
-                    //Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
-                    velocityX = player.velocityX;
-                    velocityY = player.velocityY;
-                }
+				
+				
 
 			}
 
-			//74 322
-			//76 414
-			//41 413
-			//41 325
+            //74 322
+            //76 414
+            //41 413
+            //41 325
 
-			//986 325
-			//987 414
-			//1015 411
-			//1020 324
+            //986 325
+            //987 414
+            //1015 411
+            //1020 324
 
-			int nextX = (int)(Position.X + velocityX);
+            int nextX = (int)(Position.X + velocityX);
 			int nextY = (int)(Position.Y + velocityY);
 			int lft = left + RADIUS;
 			int rgt = left + width - RADIUS;
