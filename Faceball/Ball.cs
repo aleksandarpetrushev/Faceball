@@ -32,7 +32,7 @@ namespace Faceball
 			this.player = player;
 		}
 
-		public void Move(int left, int top, int width, int height, bool isShoot)
+		public void Move(int left, int top, int width, int height)
 		{
 			
 				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
@@ -83,7 +83,7 @@ namespace Faceball
 
 		public bool IsColiding(Player player) //ball se collide-nuva so player
 		{
-			double d = (Position.X - player.Position.X) * (Position.X - player.Position.X) + (Position.Y - player.Position.Y) * (Position.Y - player.Position.Y);
+			double d = (Position.X - player.Center.X) * (Position.X - player.Center.X) + (Position.Y - player.Center.Y) * (Position.Y - player.Center.Y);
 			return d <= (2 * RADIUS) * (2 * RADIUS);
 		}
 	}

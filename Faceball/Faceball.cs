@@ -37,8 +37,7 @@ namespace Faceball
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            activePanel.Visible = false;
-            activePanel = gamePanel;            //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
+            activePanel.Visible = false;         //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
             activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
             this.BackgroundImage = Properties.Resources.gameBg;
         }

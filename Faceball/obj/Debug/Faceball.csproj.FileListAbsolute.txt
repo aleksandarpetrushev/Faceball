@@ -18,3 +18,4 @@ C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.pdb
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.exe.config
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.exe
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.pdb
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.Game.resources
