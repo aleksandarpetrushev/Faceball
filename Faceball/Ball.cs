@@ -79,11 +79,11 @@ namespace Faceball
 				}
 				if (IsMoving)
 				{
-					//Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
-					//Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
-
-
-				}
+                    //Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
+                    //Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
+                    velocityX = player.velocityX;
+                    velocityY = player.velocityY;
+                }
 
 			}
 
