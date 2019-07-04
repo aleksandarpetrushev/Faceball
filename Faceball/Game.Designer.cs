@@ -92,6 +92,7 @@
             this.Name = "Game";
             this.Text = "Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Game_MouseClick);
             this.panelScore.ResumeLayout(false);
             this.panelScore.PerformLayout();
             this.ResumeLayout(false);
