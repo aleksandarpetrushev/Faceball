@@ -16,10 +16,10 @@ namespace Faceball
     {
         public static int MAX_VELOCITY = 10;
         public static int left = 74;
-        public static int top = 63;
-        public static int width = 900;
-        public static int height = 600;
-        public static int RADIUS = 25;
+        public static int top = 65;
+        public static int width = 911;
+        public static int height = 606;
+        public static int RADIUS = 12;
         public Point Center { get; set; }
         public Icon Icon { get; set; }
         public double velocityX { get; set; }
@@ -28,8 +28,12 @@ namespace Faceball
 		public bool VodiTopka { get; set; }
         public double Angle { get; set; }
         public bool isMoving { get; set; }
+        public bool MovingUp { get; set; }
+        public bool MovingDown { get; set; }
+        public bool MovingLeft { get; set; }
+        public bool MovingRight { get; set; }
 
-		public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
+        public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
 		{
 			Center = center;
 			Icon = icon;
@@ -52,6 +56,7 @@ namespace Faceball
         {
             velocityY -= 0.5;
 			isMoving = true;
+			Console.WriteLine("MOVE UP");
 			Move();
 		}
 
@@ -60,6 +65,7 @@ namespace Faceball
             velocityY += 0.5;
 			isMoving = true;
 			Move();
+			
 		}
 
         public void MoveRight()
@@ -79,45 +85,41 @@ namespace Faceball
         public void Move()
         {
             
-				if(velocityX > MAX_VELOCITY)
-				{
-					velocityX-=0.5;
-				}
-				if (velocityY > MAX_VELOCITY)
-				{
-					velocityY-=0.5;
-				}
-				Console.WriteLine("VO MOVE");
-				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
-				double nextX = Center.X + velocityX;
-				double nextY = Center.Y + velocityY;
-				int lft = left + RADIUS;
-				int rgt = left + width - RADIUS;
-				int tp = top + RADIUS;
-				int btm = top + height - RADIUS;
+			if(velocityX > MAX_VELOCITY)
+			{
+				velocityX-=0.5;
+			}
+			if (velocityY > MAX_VELOCITY)
+			{
+				velocityY-=0.5;
+			}
 
-				if (nextX <= lft)
-				{
-					nextX = Center.X;
-				}
-				if (nextX >= rgt)
-				{
-					nextX = Center.X;
-				}
-				if (nextY <= tp)
-				{
-					nextY = Center.Y;
-				}
-				if (nextY >= btm)
-				{
-					nextY = Center.Y;
-				}
-				Center = new Point((int)nextX, (int)nextY);
-				isMoving = false;
-			
-			
-			
-				if(Velocity - 0.5 > 0) Velocity -= 0.5;
+			if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
+			double nextX = Center.X + velocityX;
+			double nextY = Center.Y + velocityY;
+			int lft = left + RADIUS;
+			int rgt = left + width - RADIUS;
+			int tp = top + RADIUS;
+			int btm = top + height - RADIUS;
+
+			if (nextX <= lft)
+			{
+				nextX = Center.X;
+			}
+			if (nextX >= rgt)
+			{
+				nextX = Center.X;
+			}
+			if (nextY <= tp)
+			{
+				nextY = Center.Y;
+			}
+			if (nextY >= btm)
+			{
+				nextY = Center.Y;
+			}
+			Center = new Point((int)nextX, (int)nextY);
+			isMoving = false;
 			
         }
 
@@ -134,22 +136,23 @@ namespace Faceball
 
         public void DecreaseVelocity()
         {
-			if ((velocityX < 0))
+			if ((velocityX < 0) && (MovingLeft == false))
 			{
 				velocityX += 0.5;
 			}
-			else if (velocityX > 0)
+			else if (velocityX > 0 && MovingRight == false)
 			{
 				velocityX -= 0.5;
 			}
-			if ((velocityY < 0))
+			if ((velocityY < 0) && MovingUp == false)
 			{
 				velocityY += 0.5;
 			}
-			else if (velocityY > 0)
+			else if (velocityY > 0 && MovingDown == false)
 			{
 				velocityY -= 0.5;
 			}
+
 
 
 		}
@@ -170,7 +173,8 @@ namespace Faceball
         public void Draw(Graphics g)
         {
 			Brush b = new SolidBrush(Color.Red);
-			g.FillEllipse(b, Center.X, Center.Y, RADIUS, RADIUS);
+			g.FillEllipse(b, Center.X-RADIUS, Center.Y-RADIUS, 2*RADIUS, 2*RADIUS);
+            b.Dispose();
             //g.DrawIcon(Icon, Center.X, Center.Y);
         }
     }

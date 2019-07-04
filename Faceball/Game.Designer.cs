@@ -92,10 +92,13 @@ namespace Faceball
 			this.BackgroundImage = global::Faceball.Properties.Resources.Field;
 			this.ClientSize = new System.Drawing.Size(1091, 736);
 			this.Controls.Add(this.panelScore);
+			this.DoubleBuffered = true;
 			this.Name = "Game";
 			this.Text = "Game";
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
+			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Game_MouseClick_1);
 			this.panelScore.ResumeLayout(false);
 			this.panelScore.PerformLayout();
 			this.ResumeLayout(false);

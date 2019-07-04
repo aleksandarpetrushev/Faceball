@@ -21,19 +21,16 @@ namespace Faceball
         public Game()
 		{
 			scene = new Scene(3);
-			scene.Ball.Position = new Point(530, 368);
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
 			timerUpdate.Start();
 			newGame();
-            timerUpdate.Start();
 		}
 
 		public void newGame()
 		{
 			scene = new Scene(3);
-			scene.Ball.Position = new Point(500, 300);
 
 		}
 		private void saveFile()
@@ -85,9 +82,27 @@ namespace Faceball
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
-            int who = scene.UpdateScene(74, 63, 900, 600);
+			if (scene.Player1.MovingDown)
+				scene.Player1.MoveDown();
+			if (scene.Player1.MovingUp)
+				scene.Player1.MoveUp();
+			if (scene.Player1.MovingLeft)
+				scene.Player1.MoveLeft();
+			if (scene.Player1.MovingRight)
+				scene.Player1.MoveRight();
 
-            if (who == 1)
+			if (scene.Player2.MovingDown)
+				scene.Player2.MoveDown();
+			if (scene.Player2.MovingUp)
+				scene.Player2.MoveUp();
+			if (scene.Player2.MovingLeft)
+				scene.Player2.MoveLeft();
+			if (scene.Player2.MovingRight)
+				scene.Player2.MoveRight();
+
+			int who = scene.UpdateScene(74, 65, 911, 606);
+			
+			if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;
@@ -106,41 +121,41 @@ namespace Faceball
         {
             if (e.KeyCode == Keys.Up)
             {
-                scene.Player1.MoveUp();
+                scene.Player1.MovingUp = true;
             }
-            else if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
-                scene.Player1.MoveDown();
+                scene.Player1.MovingDown = true;
             }
-            else if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left)
             {
-                scene.Player1.MoveLeft();
+                scene.Player1.MovingLeft = true;
             }
-            else if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right)
             {
-                scene.Player1.MoveRight();
+                scene.Player1.MovingRight = true;
             }
-            else if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 scene.Ball.Shoot();
             }
-            else if (e.KeyCode == Keys.W)
+            if (e.KeyCode == Keys.W)
             {
-                scene.Player2.MoveUp();
+                scene.Player2.MovingUp = true;
             }
-            else if (e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.S)
             {
-                scene.Player2.MoveDown();
+                scene.Player2.MovingDown = true;
             }
-            else if (e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A)
             {
-                scene.Player2.MoveLeft();
+                scene.Player2.MovingLeft = true;
             }
-            else if (e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D)
             {
-                scene.Player2.MoveRight();
+                scene.Player2.MovingRight = true;
             }
-            else if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 scene.Ball.Shoot();
             }
@@ -161,6 +176,56 @@ namespace Faceball
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
 			scene.Draw(e.Graphics);
+		}
+
+        private void Game_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                scene.Player1.MovingUp = false;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                scene.Player1.MovingDown = false;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                scene.Player1.MovingLeft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                scene.Player1.MovingRight = false;
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                scene.Ball.Shoot();
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                scene.Player2.MovingUp = false;
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                scene.Player2.MovingDown = false;
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                scene.Player2.MovingLeft = false;
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                scene.Player2.MovingRight = false;
+            }
+            if (e.KeyCode == Keys.Space)
+            {
+                scene.Ball.Shoot();
+            }
+            Invalidate(true);
+        }
+
+		private void Game_MouseClick_1(object sender, MouseEventArgs e)
+		{
+			Console.WriteLine(e.X + " " + e.Y);
 		}
 	}
 }
