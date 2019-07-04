@@ -82,10 +82,14 @@ namespace Faceball
             if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
+                int winScore = scene.WinScore;
+                scene = new Scene(winScore);
             }
             if (who == 2)
             {
                 MessageBox.Show("Player 2 Wins");
+                int winScore = scene.WinScore;
+                scene = new Scene(winScore);
             }
             Invalidate(true);
         }
@@ -139,6 +143,11 @@ namespace Faceball
         {
             lblScore1.Text = scene.ScorePlayer1.ToString();
             lblScore2.Text = scene.ScorePlayer2.ToString();
+        }
+
+        private void Game_MouseClick(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine(e.X + " " + e.Y);
         }
     }
 }
