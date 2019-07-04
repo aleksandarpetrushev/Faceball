@@ -32,8 +32,9 @@ namespace Faceball
         public bool MovingDown { get; set; }
         public bool MovingLeft { get; set; }
         public bool MovingRight { get; set; }
+		public static Ball Ball { get; set; }
 
-        public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
+		public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
 		{
 			Center = center;
 			Icon = icon;
@@ -93,14 +94,19 @@ namespace Faceball
 			{
 				velocityY-=0.5;
 			}
-
-			if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
+			
 			double nextX = Center.X + velocityX;
 			double nextY = Center.Y + velocityY;
 			int lft = left + RADIUS;
 			int rgt = left + width - RADIUS;
 			int tp = top + RADIUS;
 			int btm = top + height - RADIUS;
+
+			if (VodiTopka)
+			{
+				Ball.velocityX = velocityX;
+				Ball.velocityY = velocityY;
+			}
 
 			if (nextX <= lft)
 			{
@@ -119,7 +125,6 @@ namespace Faceball
 				nextY = Center.Y;
 			}
 			Center = new Point((int)nextX, (int)nextY);
-			isMoving = false;
 			
         }
 
