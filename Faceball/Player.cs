@@ -45,27 +45,34 @@ namespace Faceball
         public void MoveUp()
         {
             velocityY -= 5;
+			isMoving = true;
+			Console.WriteLine("VO MOVE UP" + isMoving);
         }
 
         public void MoveDown()
         {
             velocityY += 5;
-        }
+			isMoving = true;
+		}
 
         public void MoveRight()
         {
             velocityX += 5;
-        }
+			isMoving = true;
+
+		}
 
         public void MoveLeft()
         {
             velocityX -= 5;
-        }
+			isMoving = true;
+		}
 
         public void Move(int left, int top, int width, int height)
         {
             if (isMoving)
-            {	
+            {
+				Console.WriteLine("VO MOVE");
 				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
 				float nextX = Center.X + velocityX;
 				float nextY = Center.Y + velocityY;
@@ -91,6 +98,7 @@ namespace Faceball
 					nextY = Center.Y;	
 				}
 				Center = new Point((int)nextX, (int)nextY);
+				isMoving = false;
 			}
 			else
 			{

@@ -25,6 +25,7 @@ namespace Faceball
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
+			timerUpdate.Start();
 			newGame();
 		}
 
@@ -88,6 +89,7 @@ namespace Faceball
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
+			scene.UpdateScene(63, 73, 910, 600);
             int who = scene.UpdateScene(63, 73, 910, 600);
             if (who == 1)
             {
