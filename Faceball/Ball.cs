@@ -12,8 +12,8 @@ namespace Faceball
     {
         public static int RADIUS = 15;
         public Point Position { get; set; }
-		public double velocityX;
-		public double velocityY;
+		public double velocityX { get; set; }
+		public double velocityY { get; set; }
 		public double Velocity { get; set; }
 		public bool IsMoving { get; set; }
 		public bool EVodena { get; set; }
@@ -35,7 +35,6 @@ namespace Faceball
 		public Ball(Point position)
 		{
             Position = position;
-
 			Velocity = 0;
 		}
 		public void Shoot()
@@ -57,7 +56,23 @@ namespace Faceball
 			}
 			else
 			{
-				
+				if ((velocityX < 0))
+				{
+					velocityX += 0.5;
+				}
+				else if (velocityX > 0)
+				{
+					velocityX -= 0.5;
+				}
+				if ((velocityY < 0))
+				{
+					velocityY += 0.5;
+				}
+				else if (velocityY > 0)
+				{
+					velocityY -= 0.5;
+				}
+
 				if (Velocity == 0)
 				{
 					IsMoving = false;
