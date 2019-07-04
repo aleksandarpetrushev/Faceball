@@ -16,5 +16,10 @@ namespace Faceball
 		{
 			InitializeComponent();
 		}
+
+		private void Game_Load(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
 	}
 }
