@@ -25,7 +25,7 @@ namespace Faceball
             FileName = null;
         }
 
-
+		// R.T. WROTE THIS 
 
         private void saveFile()
         {
@@ -78,13 +78,5 @@ namespace Faceball
         {
             scene.UpdateScene(50, 10, );
         }
-
-        private void Game_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-            {
-
-            }
-        } 
     }
 }
