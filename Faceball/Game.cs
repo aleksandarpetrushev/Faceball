@@ -85,7 +85,7 @@ namespace Faceball
         {
             if (e.KeyCode == Keys.Up)
             {
-
+                scene.Player1.MoveUp();
             }
         } 
     }
