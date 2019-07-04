@@ -32,9 +32,8 @@ namespace Faceball
 		public void newGame()
 		{
 			scene = new Scene(3);
-			scene.Ball.Position = new Point(500, 300);
-
 		}
+
 		private void saveFile()
         {
             if (FileName == null)
@@ -84,9 +83,27 @@ namespace Faceball
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
-            int who = scene.UpdateScene(74, 63, 900, 600);
+			if (scene.Player1.MovingDown)
+				scene.Player1.MoveDown();
+			if (scene.Player1.MovingUp)
+				scene.Player1.MoveUp();
+			if (scene.Player1.MovingLeft)
+				scene.Player1.MoveLeft();
+			if (scene.Player1.MovingRight)
+				scene.Player1.MoveRight();
 
-            if (who == 1)
+			if (scene.Player2.MovingDown)
+				scene.Player2.MoveDown();
+			if (scene.Player2.MovingUp)
+				scene.Player2.MoveUp();
+			if (scene.Player2.MovingLeft)
+				scene.Player2.MoveLeft();
+			if (scene.Player2.MovingRight)
+				scene.Player2.MoveRight();
+
+			int who = scene.UpdateScene(74, 63, 900, 600);
+			
+			if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;

@@ -12,8 +12,8 @@ namespace Faceball
     {
         public static int RADIUS = 15;
         public Point Position { get; set; }
-		private float velocityX;
-		private float velocityY;
+		private double velocityX;
+		private double velocityY;
 		public double Velocity { get; set; }
 		public bool IsMoving { get; set; }
 		public bool EVodena { get; set; }
@@ -23,7 +23,7 @@ namespace Faceball
 
 		public Ball(Point Position, int velocityX, int velocityY, double velocity, bool isMoving, bool eVodena, Player player)
 		{
-			Position = Position;
+			Position = Scene.CourtCenter;
 			velocityX = velocityX;
 			velocityY = velocityY;
 			Velocity = velocity;
@@ -50,22 +50,23 @@ namespace Faceball
 				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
 				if (EVodena)
 				{
-					//Ako e vodena togas zemi velocity od playerot
-					Velocity = player.Velocity;
+                //Ako e vodena togas zemi velocity od playerot
+                    velocityX = player.velocityX;
+                    velocityY = player.velocityY;
 				}
 				else
 				{
-					if (Velocity == 0)
+					if (velocityY == 0 && velocityX == 0)
 					{
 						IsMoving = false;
 					}
 					if (IsMoving)
 					{
-						//Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
-						//Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
-						
-						Velocity--;
-						
+                    //Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
+                    //Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
+
+                        velocityX--;
+                        velocityY--;
 					}
 					
 				}
@@ -80,8 +81,8 @@ namespace Faceball
             //1015 411
             //1020 324
 
-            float nextX = Position.X + velocityX;
-			float nextY = Position.Y + velocityY;
+            double nextX = Position.X + velocityX;
+			double nextY = Position.Y + velocityY;
             if (nextY <= 414 && nextY >= 323 && nextX <= 75)
             {
                 //goal player 2
