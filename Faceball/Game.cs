@@ -27,18 +27,14 @@ namespace Faceball
             FileName = null;
 			timerUpdate.Start();
 			newGame();
+            timerUpdate.Start();
 		}
 
 		public void newGame()
 		{
-			
+			scene = new Scene(3);
+			scene.Ball.Position = new Point(500, 300);
 
-		}
-
-		private void panelScore_Paint(object sender, PaintEventArgs e)
-		{
-			lblScore1.Text = scene.ScorePlayer1.ToString();
-			lblScore2.Text = scene.ScorePlayer2.ToString();
 		}
 		private void saveFile()
         {
@@ -89,8 +85,7 @@ namespace Faceball
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
-			scene.UpdateScene(63, 73, 910, 600);
-            int who = scene.UpdateScene(63, 73, 910, 600);
+            int who = scene.UpdateScene(50, 10, 500, 300);
             if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
@@ -151,6 +146,17 @@ namespace Faceball
             Invalidate(true);
         }
 
+        private void panelScore_Paint(object sender, PaintEventArgs e)
+        {
+            lblScore1.Text = scene.ScorePlayer1.ToString();
+            lblScore2.Text = scene.ScorePlayer2.ToString();
+        }
+
+        private void Game_MouseClick(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine(e.X + " " + e.Y);
+        }
+    }
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
 			scene.Draw(e.Graphics);

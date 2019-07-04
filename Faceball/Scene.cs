@@ -39,40 +39,40 @@ namespace Faceball
             Ball.Draw(g);
         }
 
-		public int UpdateScene(int left, int top, int width, int height)
-		{
-			Player1.Move(left, top, width, height);
-			Player2.Move(left, top, width, height);
-			int goal = Ball.Move(left, top, width, height);
-			if (goal == 2)  //Score za Desniot Player (Player 2)
-			{
-				ScorePlayer2++;
-				if (ScorePlayer2 == WinScore)
-				{
-					return 2;
-				}
-				Ball.Position = CourtCenter;
-			}
-			if (goal == 1) //Score za leviot player (Player 1) 
-			{
-				ScorePlayer1++;
-				if (ScorePlayer1 == WinScore)
-				{
-					return 1;
-				}
-				Ball.Position = CourtCenter;
-			}
-			if (Ball.IsColiding(Player1))
-			{
-				Ball.EVodena = true;        //ako dojdat do topkata, pocnuvaat da ja vodat
-				Ball.player = Player1;
-			}
-			if (Ball.IsColiding(Player2))
-			{
-				Ball.EVodena = true;
-				Ball.player = Player2;
-			}
-			return 0;
-		}
-	}
+        public int UpdateScene(int left, int top, int width, int height)
+        {
+            Player1.Move(left, top, width, height);
+            Player2.Move(left, top, width, height);
+            int goal = Ball.Move(left, top, width, height);
+            if (goal == 2)  //Score za Desniot Player (Player 2)
+            {
+                ScorePlayer2++;
+                if (ScorePlayer2 == WinScore)
+                {
+                    return 2;
+                }
+                Ball.Position = CourtCenter;
+            }
+            if (goal == 1) //Score za leviot player (Player 1) 
+            {
+                ScorePlayer1++;
+                if (ScorePlayer1 == WinScore)
+                {
+                    return 1;
+                }
+                Ball.Position = CourtCenter;
+            }
+            if (Ball.IsColiding(Player1))
+            {
+                Ball.EVodena = true;        //ako dojdat do topkata, pocnuvaat da ja vodat
+                Ball.player = Player1;
+            }
+            if (Ball.IsColiding(Player2))
+            {
+                Ball.EVodena = true;
+                Ball.player = Player2;
+            }
+            return 0;
+        }
+    }
 }
