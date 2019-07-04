@@ -108,39 +108,39 @@ namespace Faceball
             {
                 scene.Player1.MoveUp();
             }
-            else if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
                 scene.Player1.MoveDown();
             }
-            else if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left)
             {
                 scene.Player1.MoveLeft();
             }
-            else if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right)
             {
                 scene.Player1.MoveRight();
             }
-            else if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 scene.Ball.Shoot();
             }
-            else if (e.KeyCode == Keys.W)
+            if (e.KeyCode == Keys.W)
             {
                 scene.Player2.MoveUp();
             }
-            else if (e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.S)
             {
                 scene.Player2.MoveDown();
             }
-            else if (e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A)
             {
                 scene.Player2.MoveLeft();
             }
-            else if (e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D)
             {
                 scene.Player2.MoveRight();
             }
-            else if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 scene.Ball.Shoot();
             }
