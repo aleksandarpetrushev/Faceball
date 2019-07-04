@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,15 +17,17 @@ namespace Faceball
     {
         Panel activePanel;      //ActivePanel promenliva koja ke ja sodrzi momentalnata scena, na pocetok main menu
 		Scene scene;
+        string FileName;
+
         public Faceball()
         {
             InitializeComponent();
             DoubleBuffered = true;
             activePanel = panelMainMenu;        
             activePanel.Visible = true;
-			//Treba panel za vnesuvanje na WinScore
-			//scene = new Scene();
-
+            //Treba panel za vnesuvanje na WinScore
+            //scene = new Scene();
+            FileName = null;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -84,7 +89,7 @@ namespace Faceball
                     using (FileStream fileStream = new FileStream(FileName, FileMode.Open))
                     {
                         IFormatter formater = new BinaryFormatter();
-                        linesDoc = (Scene)formater.Deserialize(fileStream);
+                        scene = (Scene)formater.Deserialize(fileStream);
                     }
                 }
                 catch (Exception ex)
@@ -95,6 +100,11 @@ namespace Faceball
                 }
                 Invalidate(true);
             }
+        }
+
+        private void btnLoadGame_Click(object sender, EventArgs e)
+        {
+            openFile();
         }
     }
 }

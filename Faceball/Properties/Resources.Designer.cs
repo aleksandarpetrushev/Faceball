@@ -73,9 +73,29 @@ namespace Faceball.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Field {
+            get {
+                object obj = ResourceManager.GetObject("Field", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FootballField {
             get {
                 object obj = ResourceManager.GetObject("FootballField", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FootballField1 {
+            get {
+                object obj = ResourceManager.GetObject("FootballField1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
