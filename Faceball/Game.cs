@@ -92,10 +92,14 @@ namespace Faceball
             if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
+                int winScore = scene.WinScore;
+                scene = new Scene(winScore);
             }
             if (who == 2)
             {
                 MessageBox.Show("Player 2 Wins");
+                int winScore = scene.WinScore;
+                scene = new Scene(winScore);
             }
             Invalidate(true);
         }
@@ -106,6 +110,43 @@ namespace Faceball
             {
                 scene.Player1.MoveUp();
             }
+            if (e.KeyCode == Keys.Down)
+            {
+                scene.Player1.MoveDown();
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                scene.Player1.MoveLeft();
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                scene.Player1.MoveRight();
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                scene.Ball.Shoot();
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                scene.Player2.MoveUp();
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                scene.Player2.MoveDown();
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                scene.Player2.MoveLeft();
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                scene.Player2.MoveRight();
+            }
+            if (e.KeyCode == Keys.Space)
+            {
+                scene.Ball.Shoot();
+            }
+            Invalidate(true);
         }
 
 		private void Game_Paint(object sender, PaintEventArgs e)
