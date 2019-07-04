@@ -26,6 +26,7 @@ namespace Faceball
         }
 
         //@13ks4nd4r wr0t3 t|-|1s
+		//KOMENTAR
 
         private void saveFile()
         {
