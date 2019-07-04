@@ -20,6 +20,10 @@ namespace Faceball
 			Tim = tim;
 		}
 
+		public Goal()
+		{
+		}
+
 		public void Draw(Graphics g)
 		{
 			Brush b = new SolidBrush(Color.AliceBlue);

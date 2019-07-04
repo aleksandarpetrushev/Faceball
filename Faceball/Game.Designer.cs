@@ -28,24 +28,26 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
-            this.SuspendLayout();
-            // 
-            // timerUpdate
-            // 
-            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
-            // 
-            // Game
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Faceball.Properties.Resources.Field;
-            this.ClientSize = new System.Drawing.Size(1091, 736);
-            this.Name = "Game";
-            this.Text = "Game";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
-            this.ResumeLayout(false);
+			this.components = new System.ComponentModel.Container();
+			this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+			this.SuspendLayout();
+			// 
+			// timerUpdate
+			// 
+			this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+			// 
+			// Game
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = global::Faceball.Properties.Resources.Field;
+			this.ClientSize = new System.Drawing.Size(1091, 736);
+			this.Name = "Game";
+			this.Text = "Game";
+			this.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Game_MouseUp);
+			this.ResumeLayout(false);
 
 		}
 

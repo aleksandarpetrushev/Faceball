@@ -39,6 +39,7 @@ namespace Faceball
 
 		public Player()
         {
+			Velocity = 0;
         }
 
         public void MoveUp()
@@ -66,19 +67,30 @@ namespace Faceball
             if (isMoving)
             {	
 				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
-				velocityX = (float)(Math.Cos(Angle) * Velocity);
-				velocityY = (float)(Math.Sin(Angle) * Velocity);
 				float nextX = Center.X + velocityX;
 				float nextY = Center.Y + velocityY;
-				if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
+				int lft = left + RADIUS;
+				int rgt = left + width - RADIUS;
+				int tp = top + RADIUS;
+				int btm = top + height - RADIUS;
+
+				if (nextX <= lft)
 				{
-					velocityX = -velocityX;
+					nextX = Center.X;
 				}
-				if (nextY - RADIUS <= top || nextY + RADIUS >= height + top)
+				if (nextX >= rgt)
 				{
-					velocityY = -velocityY;
+					nextX = Center.X;
 				}
-				Center = new Point((int)(Center.X + velocityX), (int)(Center.Y + velocityY));
+				if (nextY <= tp)
+				{
+					nextY = Center.Y;
+				}
+				if (nextY >= btm)
+				{
+					nextY = Center.Y;	
+				}
+				Center = new Point((int)nextX, (int)nextY);
 			}
 			else
 			{
