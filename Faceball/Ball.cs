@@ -81,9 +81,6 @@ namespace Faceball
 					velocityY -= 0.5;
 				}
 
-				
-				
-
 			}
 
             //74 322
