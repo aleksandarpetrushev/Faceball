@@ -16,9 +16,9 @@ namespace Faceball
     {
         public static int MAX_VELOCITY = 10;
         public static int left = 74;
-        public static int top = 63;
-        public static int width = 900;
-        public static int height = 600;
+        public static int top = 65;
+        public static int width = 911;
+        public static int height = 606;
         public static int RADIUS = 12;
         public Point Center { get; set; }
         public Icon Icon { get; set; }
@@ -56,6 +56,7 @@ namespace Faceball
         {
             velocityY -= 0.5;
 			isMoving = true;
+			Console.WriteLine("MOVE UP");
 			Move();
 		}
 
@@ -119,10 +120,6 @@ namespace Faceball
 			}
 			Center = new Point((int)nextX, (int)nextY);
 			isMoving = false;
-
-            
-			
-			if(Velocity - 0.5 > 0) Velocity -= 0.5;
 			
         }
 
@@ -139,27 +136,26 @@ namespace Faceball
 
         public void DecreaseVelocity()
         {
-            if ((velocityX < 0) && (MovingLeft == false))
-            {
-                velocityX += 0.5;
-                if (Velocity - 0.5 > 0) Velocity -= 0.5;
-            }
-            else if (velocityX > 0 && MovingRight == false)
-            {
-                velocityX -= 0.5;
-                if (Velocity - 0.5 > 0) Velocity -= 0.5;
-            }
-            if ((velocityY < 0) && MovingUp == false)
-            {
-                velocityY += 0.5;
-                if (Velocity - 0.5 > 0) Velocity -= 0.5;
-            }
-            else if (velocityY > 0 && MovingDown == false)
-            {
-                velocityY -= 0.5;
-                if (Velocity - 0.5 > 0) Velocity -= 0.5;
-            }
-        }
+			if ((velocityX < 0) && (MovingLeft == false))
+			{
+				velocityX += 0.5;
+			}
+			else if (velocityX > 0 && MovingRight == false)
+			{
+				velocityX -= 0.5;
+			}
+			if ((velocityY < 0) && MovingUp == false)
+			{
+				velocityY += 0.5;
+			}
+			else if (velocityY > 0 && MovingDown == false)
+			{
+				velocityY -= 0.5;
+			}
+
+
+
+		}
 
         public void IncreaseVelocity()
         {
@@ -177,7 +173,7 @@ namespace Faceball
         public void Draw(Graphics g)
         {
 			Brush b = new SolidBrush(Color.Red);
-			g.FillEllipse(b, Center.X - RADIUS, Center.Y - RADIUS, 2*RADIUS, 2*RADIUS);
+			g.FillEllipse(b, Center.X-RADIUS, Center.Y-RADIUS, 2*RADIUS, 2*RADIUS);
             b.Dispose();
             //g.DrawIcon(Icon, Center.X, Center.Y);
         }

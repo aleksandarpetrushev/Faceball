@@ -35,11 +35,12 @@ namespace Faceball
 		public Ball(Point position)
 		{
             Position = position;
+
 			Velocity = 0;
 		}
 		public void Shoot()
 		{
-			Velocity = 20;
+			//Velocity = 20;
             EVodena = false;
             player = null;
 		}
@@ -69,7 +70,7 @@ namespace Faceball
                         velocityY--;
 					}
 					
-				}
+			}
 
             //74 322
             //76 414
@@ -93,7 +94,8 @@ namespace Faceball
                 //goal player 1
                 return 1;
             }
-            else { 
+            else
+			{ 
 			    if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
 			    {
 				    velocityX = -velocityX;
@@ -110,7 +112,7 @@ namespace Faceball
 		public void Draw(Graphics g)
 		{
 			Brush brush = new SolidBrush(Color.Red);
-			g.FillEllipse(brush, Position.X - RADIUS, Position.Y - RADIUS, RADIUS * 2, RADIUS * 2);
+			g.FillEllipse(brush, Position.X-RADIUS, Position.Y-RADIUS, 2*RADIUS, 2*RADIUS);
 			brush.Dispose();
 		}
 

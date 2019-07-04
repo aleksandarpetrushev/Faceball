@@ -41,23 +41,25 @@ namespace Faceball
 
         public int UpdateScene(int left, int top, int width, int height)
         {
-            Player1.Move();
-            Player2.Move();
-            Player1.DecreaseVelocity();
-            Player2.DecreaseVelocity();
+			int goal = 0;
+			Player1.Move();
+			Player2.Move();
+			Player1.DecreaseVelocity();
+			Player2.DecreaseVelocity();
+			Ball.EVodena=Ball.IsColiding(Player1);
+			if (Ball.EVodena)
+			{
+				Ball.player = Player1;
+				goal = Ball.Move(left, top, width, height);
+			}
+			Ball.EVodena = Ball.IsColiding(Player2);
+			if (Ball.EVodena)
+			{
+				Ball.player = Player2;
+				goal = Ball.Move(left, top, width, height);
+			}
 
-            if (Ball.IsColiding(Player1))
-            {
-                Ball.EVodena = true;
-                Ball.player = Player1;
-            }
-            if (Ball.IsColiding(Player2))
-            {
-                Ball.EVodena = true;
-                Ball.player = Player2;
-            }
-
-            int goal = Ball.Move(left, top, width, height);
+			
             if (goal == 2)  //Score za Desniot Player (Player 2)
             {
                 ScorePlayer2++;
