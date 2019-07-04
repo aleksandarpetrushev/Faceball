@@ -157,14 +157,10 @@ namespace Faceball
         {
             Console.WriteLine(e.X + " " + e.Y);
         }
+   
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
 			scene.Draw(e.Graphics);
-		}
-
-		private void Game_KeyUp(object sender, KeyEventArgs e)
-		{
-			scene.DecreaseVelocity();
 		}
 	}
 }
