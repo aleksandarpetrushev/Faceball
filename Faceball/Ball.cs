@@ -39,9 +39,11 @@ namespace Faceball
 		public void Shoot()
 		{
 			Velocity = 20;
+            EVodena = false;
+            player = null;
 		}
 
-		public void Move(int left, int top, int width, int height, bool isShoot)
+		public int Move(int left, int top, int width, int height)
 		{
 			
 				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
@@ -67,17 +69,40 @@ namespace Faceball
 					
 				}
 
-			float nextX = Position.X + velocityX;
+            //74 322
+            //76 414
+            //41 413
+            //41 325
+
+            //986 325
+            //987 414
+            //1015 411
+            //1020 324
+
+            float nextX = Position.X + velocityX;
 			float nextY = Position.Y + velocityY;
-			if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
-			{
-				velocityX = -velocityX;
-			}
-			if (nextY - RADIUS <= top || nextY + RADIUS >= height + top)
-			{
-				velocityY = -velocityY;
-			}
-			Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+            if (nextY <= 414 && nextY >= 323 && nextX <= 75)
+            {
+                //goal player 2
+                return 2;
+            }
+            else if (nextY >= 325 && nextY <= 413 && nextX >= 986)
+            {
+                //goal player 1
+                return 1;
+            }
+            else { 
+			    if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
+			    {
+				    velocityX = -velocityX;
+			    }
+			    if (nextY - RADIUS <= top || nextY + RADIUS >= height + top)
+			    {
+				    velocityY = -velocityY;
+			    }
+                Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+            }
+            return 0;
 		}
 
 		public void Draw(Graphics g)

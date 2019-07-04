@@ -42,11 +42,12 @@ namespace Faceball
       //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
             activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
             this.BackgroundImage = Properties.Resources.gameBg;
-			
-			this.Close();
-			Game = new Game();
-			Game.Show();
-		}
+
+            this.Hide();
+            Game game = new Game();
+            game.ShowDialog();
+            this.Close();
+        }
 
         private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
