@@ -72,7 +72,6 @@ namespace Faceball
         {
             if (isMoving)
             {
-				Console.WriteLine("VO MOVE");
 				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
 				float nextX = Center.X + velocityX;
 				float nextY = Center.Y + velocityY;
@@ -81,25 +80,24 @@ namespace Faceball
 				int tp = top + RADIUS;
 				int btm = top + height - RADIUS;
 
-				if (nextX <= lft)
-				{
-					nextX = Center.X;
-				}
-				if (nextX >= rgt)
-				{
-					nextX = Center.X;
-				}
-				if (nextY <= tp)
-				{
-					nextY = Center.Y;
-				}
-				if (nextY >= btm)
-				{
-					nextY = Center.Y;	
-				}
-				Center = new Point((int)nextX, (int)nextY);
-				isMoving = false;
-			}
+                if (nextX <= lft)
+                {
+                    nextX = Center.X;
+                }
+                if (nextX >= rgt)
+                {
+                    nextX = Center.X;
+                }
+                if (nextY <= tp)
+                {
+                    nextY = Center.Y;
+                }
+                if (nextY >= btm)
+                {
+                    nextY = Center.Y;
+                }
+                Center = new Point((int)nextX, (int)nextY);
+            }
 			else
 			{
 				if(Velocity - 0.5 > 0) Velocity -= 0.5;
@@ -147,6 +145,7 @@ namespace Faceball
         {
 			Brush b = new SolidBrush(Color.Red);
 			g.FillEllipse(b, Center.X, Center.Y, RADIUS, RADIUS);
+            b.Dispose();
             //g.DrawIcon(Icon, Center.X, Center.Y);
         }
     }

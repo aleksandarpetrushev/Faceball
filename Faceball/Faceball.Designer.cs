@@ -30,16 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faceball));
             this.panelMainMenu = new System.Windows.Forms.Panel();
+            this.btnLoadGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnInstructions = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.lblMainMenu = new System.Windows.Forms.Label();
-            this.btnLoadGame = new System.Windows.Forms.Button();
             this.panelMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMainMenu
             // 
+            this.panelMainMenu.BackgroundImage = global::Faceball.Properties.Resources.MainMenuBg;
             this.panelMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMainMenu.Controls.Add(this.btnLoadGame);
             this.panelMainMenu.Controls.Add(this.btnExit);
@@ -50,6 +51,19 @@
             this.panelMainMenu.Name = "panelMainMenu";
             this.panelMainMenu.Size = new System.Drawing.Size(809, 451);
             this.panelMainMenu.TabIndex = 0;
+            // 
+            // btnLoadGame
+            // 
+            this.btnLoadGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadGame.BackgroundImage")));
+            this.btnLoadGame.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadGame.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadGame.Image")));
+            this.btnLoadGame.Location = new System.Drawing.Point(331, 227);
+            this.btnLoadGame.Name = "btnLoadGame";
+            this.btnLoadGame.Size = new System.Drawing.Size(111, 49);
+            this.btnLoadGame.TabIndex = 5;
+            this.btnLoadGame.Text = "Load Game";
+            this.btnLoadGame.UseVisualStyleBackColor = true;
+            this.btnLoadGame.Click += new System.EventHandler(this.btnLoadGame_Click);
             // 
             // btnExit
             // 
@@ -97,23 +111,10 @@
             this.lblMainMenu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblMainMenu.Location = new System.Drawing.Point(283, 28);
             this.lblMainMenu.Name = "lblMainMenu";
-            this.lblMainMenu.Size = new System.Drawing.Size(220, 57);
+            this.lblMainMenu.Size = new System.Drawing.Size(219, 103);
             this.lblMainMenu.TabIndex = 0;
-            this.lblMainMenu.Text = "Main Menu";
+            this.lblMainMenu.Text = "Faceball Main Menu";
             this.lblMainMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnLoadGame
-            // 
-            this.btnLoadGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoadGame.BackgroundImage")));
-            this.btnLoadGame.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadGame.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadGame.Image")));
-            this.btnLoadGame.Location = new System.Drawing.Point(331, 227);
-            this.btnLoadGame.Name = "btnLoadGame";
-            this.btnLoadGame.Size = new System.Drawing.Size(111, 49);
-            this.btnLoadGame.TabIndex = 5;
-            this.btnLoadGame.Text = "Load Game";
-            this.btnLoadGame.UseVisualStyleBackColor = true;
-            this.btnLoadGame.Click += new System.EventHandler(this.btnLoadGame_Click);
             // 
             // Faceball
             // 

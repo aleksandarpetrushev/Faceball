@@ -32,8 +32,9 @@ namespace Faceball
 			this.player = player;
 		}
 
-		public Ball()
+		public Ball(Point position)
 		{
+            Position = position;
 			Velocity = 0;
 		}
 		public void Shoot()

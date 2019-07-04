@@ -10,7 +10,7 @@ namespace Faceball
     [Serializable]
     public class Scene
     {
-        public static Point CourtCenter = new Point(150, 150); // Centar na terenot
+        public static Point CourtCenter = new Point(530, 368); // Centar na terenot
         public int WinScore { get; set; }
         public Player Player1 { get; set; }
 		public Goal Goal1 { get; set; }
@@ -29,7 +29,7 @@ namespace Faceball
 			Player1.Center = new Point(200, 368);
 			Player2 = new Player();
 			Player2.Center = new Point(858, 368);
-			Ball = new Ball();
+			Ball = new Ball(CourtCenter);
         }
 
         public void Draw(Graphics g)

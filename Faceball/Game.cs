@@ -27,7 +27,6 @@ namespace Faceball
             FileName = null;
 			timerUpdate.Start();
 			newGame();
-            timerUpdate.Start();
 		}
 
 		public void newGame()
@@ -156,7 +155,7 @@ namespace Faceball
         {
             Console.WriteLine(e.X + " " + e.Y);
         }
-    }
+   
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
 			scene.Draw(e.Graphics);
