@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Faceball
 {
+    [Serializable]
     public class Scene
     {
         public static Point CourtCenter = new Point(150, 150); // Centar na terenot
@@ -35,7 +36,7 @@ namespace Faceball
             Ball.Draw(g);
         }
 
-        public void UpdateScene(int left, int top, int width, int height, bool isShoot)
+        public bool UpdateScene(int left, int top, int width, int height, bool isShoot)
         {
             Player1.Move(left, top, width, height);
             Player2.Move(left, top, width, height);
@@ -45,7 +46,7 @@ namespace Faceball
                 ScorePlayer2++;
                 if (ScorePlayer2 == WinScore)
                 {
-                    //game over
+                    return true;
                 }
                 Ball.Position = CourtCenter;
             }
@@ -54,10 +55,21 @@ namespace Faceball
                 ScorePlayer1++;
                 if (ScorePlayer1 == WinScore)
                 {
-                    //game Over
+                    return true;
                 }
                 Ball.Position = CourtCenter;
             }
+            if (Ball.IsColiding(Player1))
+            {
+                Ball.EVodena = true;        //ako dojdat do topkata, pocnuvaat da ja vodat
+                Ball.player = Player1;
+            }
+            if (Ball.IsColliding(Player2))
+            {
+                Ball.EVodena = true;
+                Ball.player = Player2;
+            }
+            return false;
         }
     }
 }

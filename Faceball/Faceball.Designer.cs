@@ -55,9 +55,9 @@
             // 
             this.gamePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gamePanel.BackgroundImage")));
             this.gamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gamePanel.Location = new System.Drawing.Point(0, 0);
+            this.gamePanel.Location = new System.Drawing.Point(3, 3);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(809, 451);
+            this.gamePanel.Size = new System.Drawing.Size(806, 459);
             this.gamePanel.TabIndex = 5;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Faceball
 {
+    [Serializable]
     public class Ball
     {
         public static int RADIUS = 15;
@@ -94,9 +95,9 @@ namespace Faceball
 			brush.Dispose();
 		}
 
-		public bool IsColiding(Ball ball)
+		public bool IsColiding(Player player) //ball se collide-nuva so player
 		{
-			double d = (Position.X - ball.Position.X) * (Position.X - ball.Position.X) + (Position.Y - ball.Position.Y) * (Position.Y - ball.Position.Y);
+			double d = (Position.X - player.Position.X) * (Position.X - player.Position.X) + (Position.Y - player.Position.Y) * (Position.Y - player.Position.Y);
 			return d <= (2 * RADIUS) * (2 * RADIUS);
 		}
 	}

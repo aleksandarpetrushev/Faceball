@@ -15,3 +15,6 @@ C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csproj.Ge
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.csproj.CoreCompileInputs.cache
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.exe
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.pdb
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.exe.config
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.exe
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.pdb

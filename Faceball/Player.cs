@@ -11,6 +11,7 @@ namespace Faceball
     {
         UP, UPRIGHT, RIGHT, DOWNRIGHT, DOWN, DOWNLEFT, LEFT, UPLEFT
     }
+    [Serializable]
 	public class Player
     {
         public static int MAX_VELOCITY = 20;

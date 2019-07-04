@@ -14,7 +14,7 @@ namespace Faceball
 		public Rectangle rectangle { get; set; }
 		public int Tim { get; set; }
 
-		public Goal(int tim,Point point, int width, int height, Color color)
+		public Goal(int tim, Point point, int width, int height, Color color)
 		{
 			rectangle = new Rectangle(point.X, point.Y, width, height);
 			Tim = tim;
