@@ -56,6 +56,7 @@ namespace Faceball
         {
             velocityY -= 0.5;
 			isMoving = true;
+			Console.WriteLine("MOVE UP");
 			Move();
 		}
 
@@ -64,6 +65,7 @@ namespace Faceball
             velocityY += 0.5;
 			isMoving = true;
 			Move();
+			
 		}
 
         public void MoveRight()
@@ -83,52 +85,45 @@ namespace Faceball
         public void Move()
         {
             
-				if(velocityX > MAX_VELOCITY)
-				{
-					velocityX-=0.5;
-				}
-				if (velocityY > MAX_VELOCITY)
-				{
-					velocityY-=0.5;
-				}
+			if(velocityX > MAX_VELOCITY)
+			{
+				velocityX-=0.5;
+			}
+			if (velocityY > MAX_VELOCITY)
+			{
+				velocityY-=0.5;
+			}
 
-				if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
-				double nextX = Center.X + velocityX;
-				double nextY = Center.Y + velocityY;
-				int lft = left + RADIUS;
-				int rgt = left + width - RADIUS;
-				int tp = top + RADIUS;
-				int btm = top + height - RADIUS;
+			if (Velocity + 0.5 < MAX_VELOCITY) Velocity += 0.5;
+			double nextX = Center.X + velocityX;
+			double nextY = Center.Y + velocityY;
+			int lft = left + RADIUS;
+			int rgt = left + width - RADIUS;
+			int tp = top + RADIUS;
+			int btm = top + height - RADIUS;
 
-				if (nextX <= lft)
-				{
-					nextX = Center.X;
-				}
-				if (nextX >= rgt)
-				{
-					nextX = Center.X;
-				}
-				if (nextY <= tp)
-				{
-					nextY = Center.Y;
-				}
-				if (nextY >= btm)
-				{
-					nextY = Center.Y;
-				}
-				Center = new Point((int)nextX, (int)nextY);
-				isMoving = false;
+			if (nextX <= lft)
+			{
+				nextX = Center.X;
+			}
+			if (nextX >= rgt)
+			{
+				nextX = Center.X;
+			}
+			if (nextY <= tp)
+			{
+				nextY = Center.Y;
+			}
+			if (nextY >= btm)
+			{
+				nextY = Center.Y;
+			}
+			Center = new Point((int)nextX, (int)nextY);
+			isMoving = false;
 
-            if (MovingDown)
-                MoveDown();
-            if (MovingUp)
-                MoveUp();
-            if (MovingLeft)
-                MoveLeft();
-            if (MovingRight)
-                MoveRight();
+            
 			
-				if(Velocity - 0.5 > 0) Velocity -= 0.5;
+			if(Velocity - 0.5 > 0) Velocity -= 0.5;
 			
         }
 
@@ -145,19 +140,19 @@ namespace Faceball
 
         public void DecreaseVelocity()
         {
-			if ((velocityX < 0))
+			if ((velocityX < 0) && (MovingLeft == false))
 			{
 				velocityX += 0.5;
 			}
-			else if (velocityX > 0)
+			else if (velocityX > 0 && MovingRight == false)
 			{
 				velocityX -= 0.5;
 			}
-			if ((velocityY < 0))
+			if ((velocityY < 0) && MovingUp == false)
 			{
 				velocityY += 0.5;
 			}
-			else if (velocityY > 0)
+			else if (velocityY > 0 && MovingDown == false)
 			{
 				velocityY -= 0.5;
 			}
