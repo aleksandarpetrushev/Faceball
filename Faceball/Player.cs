@@ -132,6 +132,7 @@ namespace Faceball
             if (VodiTopka)
             {
                 VodiTopka = false;
+
                 return true;
             }
 
