@@ -108,5 +108,11 @@ namespace Faceball
         {
             openFile();
         }
+
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            Instructions instructions = new Instructions();
+            instructions.ShowDialog();
+        }
     }
 }

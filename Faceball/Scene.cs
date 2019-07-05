@@ -33,11 +33,32 @@ namespace Faceball
 			Player.Ball = Ball;
         }
 
-        public void Draw(Graphics g)
+		public void newGame()
+		{
+            
+		}
+
+		public void Draw(Graphics g)
         {
             Player1.Draw(g);
             Player2.Draw(g);
             Ball.Draw(g);
+        }
+
+        private void GoalScored()
+        {
+            Player1.Center = new Point(95, 369);
+            Player2.Center = new Point(967, 369);
+            Ball.Position = CourtCenter;
+            Ball.velocityX = 0;
+            Ball.velocityY = 0;
+            Player1.velocityX = Player1.velocityY = 0;
+            Player2.velocityX = Player2.velocityY = 0;
+            Player1.MovingDown = Player1.MovingLeft = Player1.MovingRight = Player1.MovingUp = false;
+            Player2.MovingDown = Player2.MovingLeft = Player2.MovingRight = Player2.MovingUp = false;
+            Player1.VodiTopka = Player2.VodiTopka = false;
+            Ball.IsMoving = false;
+            Ball.player = null;
         }
 
         public int UpdateScene(int left, int top, int width, int height)
@@ -52,11 +73,13 @@ namespace Faceball
 			{
 				Ball.player = Player1;
 				Player1.VodiTopka = true;
+				Ball.Move(left, top, width, height);
 			}
 			else
 			{
 				Player1.VodiTopka = false;
 			}
+
 			Ball.EVodena = Ball.IsColiding(Player2);
 			if (Ball.EVodena)
 			{
@@ -77,7 +100,7 @@ namespace Faceball
                 {
                     return 2;
                 }
-                Ball.Position = CourtCenter;
+                GoalScored();
             }
             if (goal == 1) //Score za leviot player (Player 1) 
             {
@@ -86,7 +109,7 @@ namespace Faceball
                 {
                     return 1;
                 }
-                Ball.Position = CourtCenter;
+                GoalScored();
             }
             if (Ball.IsColiding(Player1))
             {
