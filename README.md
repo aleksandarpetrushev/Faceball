@@ -1,5 +1,6 @@
 # Faceball
 FINKI VP Project: Risto Trajanov, Aleksandar Petrushev, Ivan Krstev
+https://github.com/rosta45/Faceball
 
 1. Instukcii za igranje moze da se najdat so klikanje na Instructions kopceto vo glavnoto meni
 2. Draw funkciite se napraveni kako sto sme gi rabotele na auditoriski i laboratoriski vezbi
