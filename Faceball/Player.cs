@@ -14,7 +14,7 @@ namespace Faceball
     [Serializable]
 	public class Player
     {
-        public static int MAX_VELOCITY = 7;
+        public static int MAX_VELOCITY = 12;
         public static int left = 74;
         public static int top = 65;
         public static int width = 911;
@@ -207,10 +207,10 @@ namespace Faceball
             }
         }
 
-        public void Draw(Graphics g)
+        public void Draw(Graphics g, Image img)
         {
 			Brush b = new SolidBrush(Color.Red);
-			g.FillEllipse(b, Center.X-RADIUS, Center.Y-RADIUS, 2*RADIUS, 2*RADIUS);
+			g.DrawImage(img, Center.X-RADIUS, Center.Y-RADIUS, 2*RADIUS, 2*RADIUS);
             b.Dispose();
             //g.DrawIcon(Icon, Center.X, Center.Y);
         }

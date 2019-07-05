@@ -18,11 +18,12 @@ namespace Faceball
         Scene scene;
         string FileName;
 		bool Shoot;
-        public Image Image1 { get; set; }
-        public Image Image2 { get; set; }
-        public int WinScore { get; set; }
+		public Image Image1 { get; set; }
+		public Image Image2 { get; set; }
+		public int WinScore { get; set; }
 
-        public Game()
+
+		public Game()
 		{
 			InitializeComponent();
             DoubleBuffered = true;
@@ -35,8 +36,9 @@ namespace Faceball
 			scene = new Scene(WinScore);
 			timerUpdate.Start();
 			Invalidate(true);
-		}
+			
 
+		}
 		private void saveFile()
         {
             if (FileName == null)
@@ -188,7 +190,7 @@ namespace Faceball
    
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
-			scene.Draw(e.Graphics);
+			scene.Draw(e.Graphics, Image1, Image2);
 		}
 
         private void Game_KeyUp(object sender, KeyEventArgs e)

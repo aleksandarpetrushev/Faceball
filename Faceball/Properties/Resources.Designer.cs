@@ -63,6 +63,26 @@ namespace Faceball.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ball {
+            get {
+                object obj = ResourceManager.GetObject("Ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ball_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Ball_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buttonBackground {
             get {
                 object obj = ResourceManager.GetObject("buttonBackground", resourceCulture);
@@ -76,6 +96,26 @@ namespace Faceball.Properties {
         internal static System.Drawing.Bitmap crazyEmoji {
             get {
                 object obj = ResourceManager.GetObject("crazyEmoji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CrazyEmoji1 {
+            get {
+                object obj = ResourceManager.GetObject("CrazyEmoji1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CrazyEmoji2 {
+            get {
+                object obj = ResourceManager.GetObject("CrazyEmoji2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -187,6 +227,16 @@ namespace Faceball.Properties {
         internal static System.Drawing.Bitmap wasd1 {
             get {
                 object obj = ResourceManager.GetObject("wasd1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WorldCup_background {
+            get {
+                object obj = ResourceManager.GetObject("WorldCup_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

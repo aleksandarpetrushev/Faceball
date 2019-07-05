@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faceball.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -147,7 +148,7 @@ namespace Faceball
 		public void Draw(Graphics g)
 		{
             Brush brush = new SolidBrush(Color.Red);
-            g.FillEllipse(brush, Position.X - RADIUS, Position.Y - RADIUS, 2 * RADIUS, 2 * RADIUS);
+            g.DrawImage(Resources.Ball_removebg_preview, Position.X - RADIUS, Position.Y - RADIUS, 2 * RADIUS, 2 * RADIUS);
             brush.Dispose();
 		}
 
