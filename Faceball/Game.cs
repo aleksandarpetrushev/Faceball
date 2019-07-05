@@ -17,20 +17,21 @@ namespace Faceball
 	{
         Scene scene;
         string FileName;
+		bool Shoot;
 
         public Game()
 		{
-			scene = new Scene(3);
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
-			timerUpdate.Start();
 			newGame();
 		}
 
 		public void newGame()
 		{
 			scene = new Scene(3);
+			Invalidate(true);
+			timerUpdate.Start();
 
 		}
 		private void saveFile()
@@ -100,20 +101,28 @@ namespace Faceball
 			if (scene.Player2.MovingRight)
 				scene.Player2.MoveRight();
 
+			if (Shoot)
+			{
+				scene.Ball.Shoot();
+			}
+				
+
 			int who = scene.UpdateScene(74, 65, 911, 606);
 			
 			if (who == 1)
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;
-                scene = new Scene(winScore);
+				timerUpdate.Stop();
+				newGame();
             }
             if (who == 2)
             {
                 MessageBox.Show("Player 2 Wins");
                 int winScore = scene.WinScore;
-                scene = new Scene(winScore);
-            }
+				timerUpdate.Stop();
+				newGame();
+			}
             Invalidate(true);
         }
 
@@ -137,7 +146,7 @@ namespace Faceball
             }
             if (e.KeyCode == Keys.Enter)
             {
-                scene.Ball.Shoot();
+				Shoot = true;
             }
             if (e.KeyCode == Keys.W)
             {
@@ -157,7 +166,7 @@ namespace Faceball
             }
             if (e.KeyCode == Keys.Space)
             {
-                scene.Ball.Shoot();
+				Shoot = true;
             }
             Invalidate(true);
         }
@@ -198,7 +207,7 @@ namespace Faceball
             }
             if (e.KeyCode == Keys.Enter)
             {
-                scene.Ball.Shoot();
+				Shoot = false;
             }
             if (e.KeyCode == Keys.W)
             {
@@ -218,7 +227,7 @@ namespace Faceball
             }
             if (e.KeyCode == Keys.Space)
             {
-                scene.Ball.Shoot();
+				Shoot = false;
             }
             Invalidate(true);
         }

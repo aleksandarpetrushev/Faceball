@@ -33,6 +33,8 @@ namespace Faceball
         public bool MovingLeft { get; set; }
         public bool MovingRight { get; set; }
 		public static Ball Ball { get; set; }
+		public double lastVelX { get; set; }
+		public double lastVelY { get; set; }
 
 		public Player(Point center, Icon icon, bool vodiTopka, double angle, bool isMoving)
 		{
@@ -57,7 +59,7 @@ namespace Faceball
         {
             velocityY -= 0.5;
 			isMoving = true;
-			Console.WriteLine("MOVE UP");
+			//Console.WriteLine("MOVE UP");
 			Move();
 		}
 
@@ -104,7 +106,30 @@ namespace Faceball
 
 			if (VodiTopka)
 			{
+				//if (velocityX == 0 && velocityY == 0)
+				//{
+				//	Ball.Position = new Point((int)(nextX + Math.Sign(lastVelX) * RADIUS + Math.Sign(lastVelX) * Ball.RADIUS), (int)(nextY + Math.Sign(lastVelY) * RADIUS + Math.Sign(lastVelY) * Ball.RADIUS));
+
+				//}
+				//else if (velocityX == 0)
+				//{
+				//	Ball.Position = new Point((int)(nextX + Math.Sign(lastVelX) * RADIUS + Math.Sign(lastVelX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
+				//	lastVelY = velocityY;
+				//}
+				//else if (velocityY == 0)
+				//{
+				//	Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(lastVelY) * RADIUS + Math.Sign(lastVelY) * Ball.RADIUS));
+				//	lastVelX = velocityX;
+				//}
+				//else
+				//{
+
+				//	Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
+				//	lastVelX = velocityX;
+				//	lastVelY = velocityY;
+				//}
 				Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
+
 			}
 
 			if (nextX <= lft)

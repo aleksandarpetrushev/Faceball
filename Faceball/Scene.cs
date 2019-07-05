@@ -33,7 +33,13 @@ namespace Faceball
 			Player.Ball = Ball;
         }
 
-        public void Draw(Graphics g)
+		public void newGame()
+		{
+
+			
+		}
+
+		public void Draw(Graphics g)
         {
             Player1.Draw(g);
             Player2.Draw(g);
@@ -52,6 +58,7 @@ namespace Faceball
 			{
 				Ball.player = Player1;
 				Player1.VodiTopka = true;
+				Ball.Move(left, top, width, height);
 			}
 			else
 			{

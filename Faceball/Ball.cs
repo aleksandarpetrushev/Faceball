@@ -45,8 +45,11 @@ namespace Faceball
 
 				EVodena = false;
 				player.VodiTopka = false;
-				velocityX = 3 * velocityX;
-				velocityY = 3 * velocityY;
+				if(velocityX != 0 || velocityY != 0)
+				{
+					velocityX = 3 * velocityX;
+					velocityY = 3 * velocityY;
+				}
 				Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
 				player = null;
 			}
