@@ -38,7 +38,6 @@ namespace Faceball
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.gameBg;	
 			this.Hide();
 			game = new Game();
 			game.ShowDialog();

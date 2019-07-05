@@ -47,7 +47,7 @@
             this.lblPlayer1.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblPlayer1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPlayer1.Location = new System.Drawing.Point(107, 64);
+            this.lblPlayer1.Location = new System.Drawing.Point(115, 49);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(113, 31);
             this.lblPlayer1.TabIndex = 0;
@@ -59,7 +59,7 @@
             this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblPlayer2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPlayer2.Location = new System.Drawing.Point(544, 64);
+            this.lblPlayer2.Location = new System.Drawing.Point(543, 49);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(113, 31);
             this.lblPlayer2.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.pictureBox1.Image = global::Faceball.Properties.Resources.kisspng_computer_keyboard_arrow_keys_clip_art_5adca3132730b7_8563640315244091071605;
             this.pictureBox1.Location = new System.Drawing.Point(87, 118);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(165, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -90,9 +90,10 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(517, 98);
+            this.pictureBox3.Image = global::Faceball.Properties.Resources.wasd1;
+            this.pictureBox3.Location = new System.Drawing.Point(503, 98);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(183, 137);
+            this.pictureBox3.Size = new System.Drawing.Size(191, 124);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -124,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Faceball.Properties.Resources.MainMenuBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnOK);

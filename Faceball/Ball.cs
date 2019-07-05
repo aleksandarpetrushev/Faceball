@@ -20,8 +20,9 @@ namespace Faceball
 		public Player player { get; set; }
 		public double Angle { get; set; }
 		public Goal goal { get; set; }
+        public Image Icon { get; set; }
 
-		public Ball(Point Position, int velocityX, int velocityY, double velocity, bool isMoving, bool eVodena, Player player)
+        public Ball(Point Position, int velocityX, int velocityY, double velocity, bool isMoving, bool eVodena, Player player)
 		{
 			Position = Position;
 			velocityX = velocityX;
@@ -145,9 +146,9 @@ namespace Faceball
 
 		public void Draw(Graphics g)
 		{
-			Brush brush = new SolidBrush(Color.Red);
-			g.FillEllipse(brush, Position.X-RADIUS, Position.Y-RADIUS, 2*RADIUS, 2*RADIUS);
-			brush.Dispose();
+            Brush brush = new SolidBrush(Color.Red);
+            g.FillEllipse(brush, Position.X - RADIUS, Position.Y - RADIUS, 2 * RADIUS, 2 * RADIUS);
+            brush.Dispose();
 		}
 
 		public bool IsColiding(Player player) //ball se collide-nuva so player
