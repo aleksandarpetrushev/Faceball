@@ -1,2 +1,3 @@
 # Faceball
-FINKI VP Project
+FINKI VP Project: Risto Trajanov, Aleksandar Petrushev, Ivan Krstev
+
