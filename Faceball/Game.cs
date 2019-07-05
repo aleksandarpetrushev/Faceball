@@ -146,7 +146,7 @@ namespace Faceball
             {
                 scene.Player1.MovingRight = true;
             }
-            if (e.KeyCode == Keys.Enter && scene.Ball.player == scene.Player1)
+            if (e.KeyCode == Keys.Enter)
             {
 				Shoot = true;
             }
@@ -166,7 +166,7 @@ namespace Faceball
             {
                 scene.Player2.MovingRight = true;
             }
-            if (e.KeyCode == Keys.Space && scene.Ball.player == scene.Player2)
+            if (e.KeyCode == Keys.Space)
             {
 				Shoot = true;
             }
@@ -238,5 +238,20 @@ namespace Faceball
 		{
 			Console.WriteLine(e.X + " " + e.Y);
 		}
-	}
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void newToolStripButton_Click(object sender, EventArgs e)
+        {
+            newGame();
+        }
+
+        private void openToolStripButton_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+    }
 }

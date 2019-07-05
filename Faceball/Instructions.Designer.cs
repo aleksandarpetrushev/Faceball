@@ -59,7 +59,7 @@
             this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblPlayer2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPlayer2.Location = new System.Drawing.Point(543, 49);
+            this.lblPlayer2.Location = new System.Drawing.Point(558, 49);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(113, 31);
             this.lblPlayer2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Faceball.Properties.Resources.kisspng_computer_keyboard_arrow_keys_clip_art_5adca3132730b7_8563640315244091071605;
-            this.pictureBox1.Location = new System.Drawing.Point(87, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(534, 115);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,9 +80,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Faceball.Properties.Resources.enterButton;
-            this.pictureBox2.Location = new System.Drawing.Point(87, 258);
+            this.pictureBox2.Location = new System.Drawing.Point(521, 217);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 108);
+            this.pictureBox2.Size = new System.Drawing.Size(178, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -91,7 +91,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Faceball.Properties.Resources.wasd1;
-            this.pictureBox3.Location = new System.Drawing.Point(503, 98);
+            this.pictureBox3.Location = new System.Drawing.Point(77, 115);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(191, 124);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Faceball.Properties.Resources.spaceButton;
-            this.pictureBox4.Location = new System.Drawing.Point(432, 228);
+            this.pictureBox4.Location = new System.Drawing.Point(25, 285);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(340, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,9 +113,9 @@
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnOK.Image = global::Faceball.Properties.Resources.buttonBackground;
-            this.btnOK.Location = new System.Drawing.Point(357, 326);
+            this.btnOK.Location = new System.Drawing.Point(347, 400);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(115, 40);
+            this.btnOK.Size = new System.Drawing.Size(136, 40);
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Faceball.Properties.Resources.MainMenuBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(803, 537);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);

@@ -105,12 +105,12 @@ namespace Faceball
 			int tp = top + RADIUS;
 			int btm = top + height - RADIUS;
 
-			if (nextY <= 414 && nextY >= 323 && nextX <= 75)
+			if (nextY <= 414 && nextY >= 323 && nextX <= 80)
             {
                 //goal player 2
                 return 2;
             }
-            else if (nextY >= 325 && nextY <= 413 && nextX >= 986)
+            else if (nextY >= 325 && nextY <= 413 && nextX >= 970)
             {
                 //goal player 1
                 return 1;
