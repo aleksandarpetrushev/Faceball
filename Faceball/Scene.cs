@@ -40,10 +40,10 @@ namespace Faceball
 			Player2.Center = new Point(967, 369);
 		}
 
-		public void Draw(Graphics g)
+		public void Draw(Graphics g, Image img1, Image img2)
         {
-            Player1.Draw(g);
-            Player2.Draw(g);
+            Player1.Draw(g, img1);
+            Player2.Draw(g, img2);
             Ball.Draw(g);
         }
 

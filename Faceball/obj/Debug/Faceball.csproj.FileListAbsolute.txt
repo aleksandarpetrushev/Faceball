@@ -21,3 +21,6 @@ C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\bin\Debug\Faceball.pdb
 C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.Game.resources
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.Game.resources
 C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.Instructions.resources
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.ChooseEmoji.resources
+C:\Users\Riste\Documents\GitHub\Faceball\Faceball\obj\Debug\Faceball.Instructions.resources
+C:\Users\Ace\Source\Repos\rosta45\Faceball\Faceball\obj\Debug\Faceball.ChooseEmoji.resources

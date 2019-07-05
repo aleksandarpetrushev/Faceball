@@ -18,19 +18,20 @@ namespace Faceball
         Scene scene;
         string FileName;
 		bool Shoot;
-        public Image Image1 { get; set; }
-        public Image Image2 { get; set; }
+		public Image Image1 { get; set; }
+		public Image Image2 { get; set; }
         public int WinScore { get; set; }
 
-        public Game()
+		public Game(int winScore)
 		{
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
-			newGame();
+			newGame(winScore);
+            WinScore = winScore;
 		}
 
-		public void newGame()
+		public void newGame(int WinScore)
 		{
 			scene = new Scene(WinScore);
 			timerUpdate.Start();
@@ -116,7 +117,7 @@ namespace Faceball
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;
-				newGame();
+				newGame(winScore);
 				timerUpdate.Stop();
 				
             }
@@ -124,7 +125,7 @@ namespace Faceball
             {
                 MessageBox.Show("Player 2 Wins");
                 int winScore = scene.WinScore;
-				newGame();
+				newGame(winScore);
 				timerUpdate.Stop();
 			}
             Invalidate(true);
@@ -188,7 +189,7 @@ namespace Faceball
    
 		private void Game_Paint(object sender, PaintEventArgs e)
 		{
-			scene.Draw(e.Graphics);
+			scene.Draw(e.Graphics, Image1, Image2);
 		}
 
         private void Game_KeyUp(object sender, KeyEventArgs e)
@@ -248,7 +249,7 @@ namespace Faceball
 
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
-            newGame();
+            newGame(WinScore);
         }
 
         private void openToolStripButton_Click(object sender, EventArgs e)

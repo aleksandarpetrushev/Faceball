@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instructions));
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,7 @@
             this.lblPlayer1.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblPlayer1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPlayer1.Location = new System.Drawing.Point(115, 49);
+            this.lblPlayer1.Location = new System.Drawing.Point(66, 69);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(113, 31);
             this.lblPlayer1.TabIndex = 0;
@@ -59,7 +60,7 @@
             this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblPlayer2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPlayer2.Location = new System.Drawing.Point(558, 49);
+            this.lblPlayer2.Location = new System.Drawing.Point(571, 69);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(113, 31);
             this.lblPlayer2.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Faceball.Properties.Resources.kisspng_computer_keyboard_arrow_keys_clip_art_5adca3132730b7_8563640315244091071605;
-            this.pictureBox1.Location = new System.Drawing.Point(534, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(547, 135);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,7 +81,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Faceball.Properties.Resources.enterButton;
-            this.pictureBox2.Location = new System.Drawing.Point(521, 217);
+            this.pictureBox2.Location = new System.Drawing.Point(534, 237);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(178, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,7 +92,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Faceball.Properties.Resources.wasd1;
-            this.pictureBox3.Location = new System.Drawing.Point(77, 115);
+            this.pictureBox3.Location = new System.Drawing.Point(52, 135);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(191, 124);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +103,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Faceball.Properties.Resources.spaceButton;
-            this.pictureBox4.Location = new System.Drawing.Point(25, 285);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 305);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(340, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +114,7 @@
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnOK.Image = global::Faceball.Properties.Resources.buttonBackground;
-            this.btnOK.Location = new System.Drawing.Point(347, 400);
+            this.btnOK.Location = new System.Drawing.Point(343, 459);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(136, 40);
             this.btnOK.TabIndex = 6;
@@ -125,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Faceball.Properties.Resources.MainMenuBg;
+            this.BackgroundImage = global::Faceball.Properties.Resources.WorldCup_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(803, 537);
             this.Controls.Add(this.btnOK);
@@ -135,6 +136,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Instructions";
             this.Text = "Instructions";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
