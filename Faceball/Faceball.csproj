@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ball.cs" />
+    <Compile Include="ChooseEmoji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseEmoji.Designer.cs">
+      <DependentUpon>ChooseEmoji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faceball.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Scene.cs" />
+    <EmbeddedResource Include="ChooseEmoji.resx">
+      <DependentUpon>ChooseEmoji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Faceball.resx">
       <DependentUpon>Faceball.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,13 +148,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tiredEmoji.png" />
     <None Include="Resources\kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.85636403152440910716052.png" />
     <None Include="Resources\wasd1.png" />
     <None Include="Resources\spaceButton.png" />
     <None Include="Resources\kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.85636403152440910716051.png" />
     <None Include="Resources\FootballField.jpg" />
     <None Include="Resources\enterButton.png" />
+    <None Include="Resources\crazyEmoji.png" />
+    <None Include="Resources\excitedEmoji.png" />
     <Content Include="Resources\footballBall.png" />
+    <None Include="Resources\hahaEmoji.png" />
     <Content Include="Resources\kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.8563640315244091071605.png" />
     <Content Include="Resources\Field.jpg" />
     <Content Include="Resources\FootballField.png" />

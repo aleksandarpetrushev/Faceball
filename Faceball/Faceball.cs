@@ -18,7 +18,6 @@ namespace Faceball
         Panel activePanel;      //ActivePanel promenliva koja ke ja sodrzi momentalnata scena, na pocetok main menu
 		Scene scene;
         string FileName;
-		public Game game;
         public Faceball()
         {
             InitializeComponent();
@@ -38,10 +37,11 @@ namespace Faceball
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-			this.Hide();
-			game = new Game();
-			game.ShowDialog();
-			this.Close();
+            this.Close();
+            ChooseEmoji chooseEmoji = new ChooseEmoji();
+            chooseEmoji.ShowDialog();
+			//game = new Game();
+			//game.ShowDialog();
 		}
 
         private void gamePanel_Paint(object sender, PaintEventArgs e)
