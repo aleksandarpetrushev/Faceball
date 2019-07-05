@@ -18,7 +18,6 @@ namespace Faceball
         Panel activePanel;      //ActivePanel promenliva koja ke ja sodrzi momentalnata scena, na pocetok main menu
 		Scene scene;
         string FileName;
-
         public Faceball()
         {
             InitializeComponent();
@@ -28,6 +27,7 @@ namespace Faceball
             //Treba panel za vnesuvanje na WinScore
             //scene = new Scene();
             FileName = null;
+			
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -37,11 +37,13 @@ namespace Faceball
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            activePanel.Visible = false;
-            activePanel = gamePanel;            //Se menja scenata na igra, ama ima nekoj problem i ne se menja panelot, 
-            activePanel.Visible = true;         //prviot go snemuva, a toj sto treba da dojde - gamePanel go nema
-            this.BackgroundImage = Properties.Resources.gameBg;
-        }
+            ChooseEmoji chooseEmoji = new ChooseEmoji();
+            chooseEmoji.ShowDialog();
+
+			this.Close();
+			//game = new Game();
+			//game.ShowDialog();
+		}
 
         private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
@@ -105,6 +107,12 @@ namespace Faceball
         private void btnLoadGame_Click(object sender, EventArgs e)
         {
             openFile();
+        }
+
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            Instructions instructions = new Instructions();
+            instructions.ShowDialog();
         }
     }
 }

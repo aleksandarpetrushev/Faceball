@@ -63,9 +63,79 @@ namespace Faceball.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ball {
+            get {
+                object obj = ResourceManager.GetObject("Ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ball_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Ball_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buttonBackground {
             get {
                 object obj = ResourceManager.GetObject("buttonBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crazyEmoji {
+            get {
+                object obj = ResourceManager.GetObject("crazyEmoji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CrazyEmoji1 {
+            get {
+                object obj = ResourceManager.GetObject("CrazyEmoji1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CrazyEmoji2 {
+            get {
+                object obj = ResourceManager.GetObject("CrazyEmoji2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enterButton {
+            get {
+                object obj = ResourceManager.GetObject("enterButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excitedEmoji {
+            get {
+                object obj = ResourceManager.GetObject("excitedEmoji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +173,20 @@ namespace Faceball.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gameBg {
+        internal static System.Drawing.Bitmap hahaEmoji {
             get {
-                object obj = ResourceManager.GetObject("gameBg", resourceCulture);
+                object obj = ResourceManager.GetObject("hahaEmoji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_computer_keyboard_arrow_keys_clip_art_5adca3132730b7_8563640315244091071605 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.85636403152440910716" +
+                        "05", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +197,46 @@ namespace Faceball.Properties {
         internal static System.Drawing.Bitmap MainMenuBg {
             get {
                 object obj = ResourceManager.GetObject("MainMenuBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spaceButton {
+            get {
+                object obj = ResourceManager.GetObject("spaceButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tiredEmoji {
+            get {
+                object obj = ResourceManager.GetObject("tiredEmoji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wasd1 {
+            get {
+                object obj = ResourceManager.GetObject("wasd1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WorldCup_background {
+            get {
+                object obj = ResourceManager.GetObject("WorldCup_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

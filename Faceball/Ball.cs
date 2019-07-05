@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faceball.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,18 +11,19 @@ namespace Faceball
     [Serializable]
     public class Ball
     {
-        public static int RADIUS = 15;
+        public static int RADIUS = 13;
         public Point Position { get; set; }
-		private float velocityX;
-		private float velocityY;
+		public double velocityX { get; set; }
+		public double velocityY { get; set; }
 		public double Velocity { get; set; }
 		public bool IsMoving { get; set; }
 		public bool EVodena { get; set; }
 		public Player player { get; set; }
 		public double Angle { get; set; }
 		public Goal goal { get; set; }
+        public Image Icon { get; set; }
 
-		public Ball(Point Position, int velocityX, int velocityY, double velocity, bool isMoving, bool eVodena, Player player)
+        public Ball(Point Position, int velocityX, int velocityY, double velocity, bool isMoving, bool eVodena, Player player)
 		{
 			Position = Position;
 			velocityX = velocityX;
@@ -32,58 +34,131 @@ namespace Faceball
 			this.player = player;
 		}
 
-		public void Move(int left, int top, int width, int height, bool isShoot)
+		public Ball(Point position)
 		{
-			
-				//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
-				if (EVodena)
+            Position = position;
+			Velocity = 0;
+		}
+		public void Shoot()
+		{
+			//Velocity = 20;
+			if(player != null)
+			{
+
+				EVodena = false;
+				player.VodiTopka = false;
+				if(velocityX != 0 || velocityY != 0)
 				{
-					//Ako e vodena togas zemi velocity od playerot
-					Velocity = player.Velocity;
+					velocityX = 3 * velocityX;
+					velocityY = 3 * velocityY;
 				}
-				else
+				else if(velocityX == 0 && velocityY == 0){
+					velocityX = Math.Sign(Position.X) * 2;
+					velocityY = Math.Sign(Position.Y) * 2;
+				}
+				Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+				player.Shoot();
+				player = null;
+			}
+		}
+
+		public int Move(int left, int top, int width, int height)
+		{
+
+			//Ako se mrda ima dve sostojbi ili e vodena ili e shutnata ako ne togas miruva
+			if (EVodena)
+			{
+				//Ako e vodena togas zemi velocity od playerot
+				velocityX = player.velocityX;
+				velocityY = player.velocityY;
+			}
+			else
+			{
+				if ((velocityX < 0))
 				{
-					if (Velocity == 0)
-					{
-						IsMoving = false;
-					}
-					if (IsMoving)
-					{
-						//Ako mrda se proveruva dali e u gol --- Treba da ima klasa za golot sto ke bide rectangle
-						//Se proveruva dali vlegla vo golot taka sto se povikuva is coliding vo Goal klasata
-						
-						Velocity--;
-						
-					}
-					
+					velocityX += 0.5;
+				}
+				else if (velocityX > 0)
+				{
+					velocityX -= 0.5;
+				}
+				if ((velocityY < 0))
+				{
+					velocityY += 0.5;
+				}
+				else if (velocityY > 0)
+				{
+					velocityY -= 0.5;
 				}
 
-			
-			velocityX = (float)(Math.Cos(Angle) * Velocity);
-			velocityY = (float)(Math.Sin(Angle) * Velocity);
-			float nextX = Position.X + velocityX;
-			float nextY = Position.Y + velocityY;
-			if (nextX - RADIUS <= left || nextX + RADIUS >= width + left)
-			{
-				velocityX = -velocityX;
 			}
-			if (nextY - RADIUS <= top || nextY + RADIUS >= height + top)
+
+            //74 322
+            //76 414
+            //41 413
+            //41 325
+
+            //986 325
+            //987 414
+            //1015 411
+            //1020 324
+
+            int nextX = (int)(Position.X + velocityX);
+			int nextY = (int)(Position.Y + velocityY);
+			int lft = left + RADIUS;
+			int rgt = left + width - RADIUS;
+			int tp = top + RADIUS;
+			int btm = top + height - RADIUS;
+
+			if (nextY <= 414 && nextY >= 323 && nextX <= 80)
+            {
+                //goal player 2
+                return 2;
+            }
+            else if (nextY >= 325 && nextY <= 413 && nextX >= 970)
+            {
+                //goal player 1
+                return 1;
+            }
+            else
 			{
-				velocityY = -velocityY;
-			}
-			Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+				if (nextX <= lft)
+				{
+					nextX = lft + (lft - nextX);
+					velocityX = -velocityX;
+				}
+				if (nextX >= rgt)
+				{
+					nextX = rgt - (nextX - rgt);
+					velocityX = -velocityX;
+
+				}
+				if (nextY <= tp)
+				{
+					nextY = tp + (tp - nextY);
+					velocityY = -velocityY;
+				}
+				if (nextY >= btm)
+				{
+					nextY = btm - (nextY - btm);
+					velocityY = -velocityY;
+				}
+				Position = new Point(nextX, nextY);
+
+            }
+            return 0;
 		}
 
 		public void Draw(Graphics g)
 		{
-			Brush brush = new SolidBrush(Color.Red);
-			g.FillEllipse(brush, Position.X - RADIUS, Position.Y - RADIUS, RADIUS * 2, RADIUS * 2);
-			brush.Dispose();
+            Brush brush = new SolidBrush(Color.Red);
+            g.DrawImage(Resources.Ball_removebg_preview, Position.X - RADIUS, Position.Y - RADIUS, 2 * RADIUS, 2 * RADIUS);
+            brush.Dispose();
 		}
 
 		public bool IsColiding(Player player) //ball se collide-nuva so player
 		{
-			double d = (Position.X - player.Position.X) * (Position.X - player.Position.X) + (Position.Y - player.Position.Y) * (Position.Y - player.Position.Y);
+			double d = (Position.X - player.Center.X) * (Position.X - player.Center.X) + (Position.Y - player.Center.Y) * (Position.Y - player.Center.Y);
 			return d <= (2 * RADIUS) * (2 * RADIUS);
 		}
 	}

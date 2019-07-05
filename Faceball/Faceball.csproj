@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ball.cs" />
+    <Compile Include="ChooseEmoji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseEmoji.Designer.cs">
+      <DependentUpon>ChooseEmoji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faceball.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,15 +81,32 @@
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="Goal.cs" />
+    <Compile Include="Instructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructions.Designer.cs">
+      <DependentUpon>Instructions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Scene.cs" />
+    <EmbeddedResource Include="ChooseEmoji.resx">
+      <DependentUpon>ChooseEmoji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Faceball.resx">
       <DependentUpon>Faceball.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructions.resx">
+      <DependentUpon>Instructions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,11 +117,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -130,7 +148,23 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\WorldCup_background.jpg" />
+    <None Include="Resources\tiredEmoji.png" />
+    <None Include="Resources\kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.85636403152440910716052.png" />
+    <None Include="Resources\wasd1.png" />
+    <None Include="Resources\spaceButton.png" />
+    <None Include="Resources\kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.85636403152440910716051.png" />
     <None Include="Resources\FootballField.jpg" />
+    <None Include="Resources\enterButton.png" />
+    <None Include="Resources\crazyEmoji.png" />
+    <None Include="Resources\excitedEmoji.png" />
+    <None Include="Resources\Ball.jpg" />
+    <Content Include="Resources\Ball-removebg-preview.png" />
+    <Content Include="Resources\CrazyEmoji1.png" />
+    <Content Include="Resources\CrazyEmoji2.png" />
+    <Content Include="Resources\footballBall.png" />
+    <None Include="Resources\hahaEmoji.png" />
+    <Content Include="Resources\kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.8563640315244091071605.png" />
     <Content Include="Resources\Field.jpg" />
     <Content Include="Resources\FootballField.png" />
   </ItemGroup>
