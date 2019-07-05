@@ -14,12 +14,12 @@ namespace Faceball
     [Serializable]
 	public class Player
     {
-        public static int MAX_VELOCITY = 10;
+        public static int MAX_VELOCITY = 7;
         public static int left = 74;
         public static int top = 65;
         public static int width = 911;
         public static int height = 606;
-        public static int RADIUS = 12;
+        public static int RADIUS = 17;
         public Point Center { get; set; }
         public Icon Icon { get; set; }
         public double velocityX { get; set; }
@@ -57,7 +57,7 @@ namespace Faceball
 
         public void MoveUp()
         {
-            velocityY -= 0.5;
+			velocityY -= 0.5;
 			isMoving = true;
 			//Console.WriteLine("MOVE UP");
 			Move();
@@ -92,9 +92,17 @@ namespace Faceball
 			{
 				velocityX-=0.5;
 			}
+			else if(velocityX < -MAX_VELOCITY)
+			{
+				velocityX += 0.5;
+			}
 			if (velocityY > MAX_VELOCITY)
 			{
 				velocityY-=0.5;
+			}
+			else if(velocityY < -MAX_VELOCITY)
+			{
+				velocityY += 0.5;
 			}
 			
 			double nextX = Center.X + velocityX;

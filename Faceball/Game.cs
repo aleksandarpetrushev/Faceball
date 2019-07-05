@@ -30,8 +30,9 @@ namespace Faceball
 		public void newGame()
 		{
 			scene = new Scene(3);
-			Invalidate(true);
 			timerUpdate.Start();
+			Invalidate(true);
+			
 
 		}
 		private void saveFile()
@@ -113,15 +114,16 @@ namespace Faceball
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;
-				timerUpdate.Stop();
 				newGame();
+				timerUpdate.Stop();
+				
             }
             if (who == 2)
             {
                 MessageBox.Show("Player 2 Wins");
                 int winScore = scene.WinScore;
-				timerUpdate.Stop();
 				newGame();
+				timerUpdate.Stop();
 			}
             Invalidate(true);
         }

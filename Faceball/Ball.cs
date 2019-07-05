@@ -10,7 +10,7 @@ namespace Faceball
     [Serializable]
     public class Ball
     {
-        public static int RADIUS = 15;
+        public static int RADIUS = 13;
         public Point Position { get; set; }
 		public double velocityX { get; set; }
 		public double velocityY { get; set; }
@@ -51,6 +51,7 @@ namespace Faceball
 					velocityY = 3 * velocityY;
 				}
 				Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
+				player.Shoot();
 				player = null;
 			}
 		}
