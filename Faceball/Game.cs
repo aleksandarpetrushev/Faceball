@@ -28,10 +28,10 @@ namespace Faceball
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
-			newGame();
+			newGame(WinScore);
 		}
 
-		public void newGame()
+		public void newGame(int WinScore)
 		{
 			scene = new Scene(WinScore);
 			timerUpdate.Start();
@@ -118,7 +118,7 @@ namespace Faceball
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;
-				newGame();
+				newGame(WinScore);
 				timerUpdate.Stop();
 				
             }
@@ -126,7 +126,7 @@ namespace Faceball
             {
                 MessageBox.Show("Player 2 Wins");
                 int winScore = scene.WinScore;
-				newGame();
+				newGame(WinScore);
 				timerUpdate.Stop();
 			}
             Invalidate(true);
@@ -250,7 +250,7 @@ namespace Faceball
 
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
-            newGame();
+            newGame(WinScore);
         }
 
         private void openToolStripButton_Click(object sender, EventArgs e)
