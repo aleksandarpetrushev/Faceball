@@ -52,6 +52,10 @@ namespace Faceball
 					velocityX = 3 * velocityX;
 					velocityY = 3 * velocityY;
 				}
+				else if(velocityX == 0 && velocityY == 0){
+					velocityX = Math.Sign(Position.X) * 2;
+					velocityY = Math.Sign(Position.Y) * 2;
+				}
 				Position = new Point((int)(Position.X + velocityX), (int)(Position.Y + velocityY));
 				player.Shoot();
 				player = null;

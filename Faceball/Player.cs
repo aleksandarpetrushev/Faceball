@@ -19,7 +19,7 @@ namespace Faceball
         public static int top = 65;
         public static int width = 911;
         public static int height = 606;
-        public static int RADIUS = 17;
+        public static int RADIUS = 20;
         public Point Center { get; set; }
         public Icon Icon { get; set; }
         public double velocityX { get; set; }
@@ -114,28 +114,28 @@ namespace Faceball
 
 			if (VodiTopka)
 			{
-				//if (velocityX == 0 && velocityY == 0)
-				//{
-				//	Ball.Position = new Point((int)(nextX + Math.Sign(lastVelX) * RADIUS + Math.Sign(lastVelX) * Ball.RADIUS), (int)(nextY + Math.Sign(lastVelY) * RADIUS + Math.Sign(lastVelY) * Ball.RADIUS));
+				if (velocityX == 0 && velocityY == 0)
+				{
+					Ball.Position = new Point((int)(nextX + Math.Sign(lastVelX) * RADIUS + Math.Sign(lastVelX) * Ball.RADIUS), (int)(nextY + Math.Sign(lastVelY) * RADIUS + Math.Sign(lastVelY) * Ball.RADIUS));
 
-				//}
-				//else if (velocityX == 0)
-				//{
-				//	Ball.Position = new Point((int)(nextX + Math.Sign(lastVelX) * RADIUS + Math.Sign(lastVelX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
-				//	lastVelY = velocityY;
-				//}
-				//else if (velocityY == 0)
-				//{
-				//	Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(lastVelY) * RADIUS + Math.Sign(lastVelY) * Ball.RADIUS));
-				//	lastVelX = velocityX;
-				//}
-				//else
-				//{
+				}
+				else if (velocityX == 0)
+				{
+					Ball.Position = new Point((int)(nextX + Math.Sign(lastVelX) * RADIUS + Math.Sign(lastVelX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
+					lastVelY = velocityY;
+				}
+				else if (velocityY == 0)
+				{
+					Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(lastVelY) * RADIUS + Math.Sign(lastVelY) * Ball.RADIUS));
+					lastVelX = velocityX;
+				}
+				else
+				{
 
-				//	Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
-				//	lastVelX = velocityX;
-				//	lastVelY = velocityY;
-				//}
+					Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
+					lastVelX = velocityX;
+					lastVelY = velocityY;
+				}
 				Ball.Position = new Point((int)(nextX + Math.Sign(velocityX) * RADIUS + Math.Sign(velocityX) * Ball.RADIUS), (int)(nextY + Math.Sign(velocityY) * RADIUS + Math.Sign(velocityY) * Ball.RADIUS));
 
 			}

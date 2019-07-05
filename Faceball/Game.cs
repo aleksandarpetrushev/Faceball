@@ -20,15 +20,15 @@ namespace Faceball
 		bool Shoot;
 		public Image Image1 { get; set; }
 		public Image Image2 { get; set; }
-		public int WinScore { get; set; }
+        public int WinScore { get; set; }
 
-
-		public Game()
+		public Game(int winScore)
 		{
 			InitializeComponent();
             DoubleBuffered = true;
             FileName = null;
-			newGame(WinScore);
+			newGame(winScore);
+            WinScore = winScore;
 		}
 
 		public void newGame(int WinScore)
@@ -36,9 +36,8 @@ namespace Faceball
 			scene = new Scene(WinScore);
 			timerUpdate.Start();
 			Invalidate(true);
-			
-
 		}
+
 		private void saveFile()
         {
             if (FileName == null)
@@ -118,7 +117,7 @@ namespace Faceball
             {
                 MessageBox.Show("Player 1 Wins");
                 int winScore = scene.WinScore;
-				newGame(WinScore);
+				newGame(winScore);
 				timerUpdate.Stop();
 				
             }
@@ -126,7 +125,7 @@ namespace Faceball
             {
                 MessageBox.Show("Player 2 Wins");
                 int winScore = scene.WinScore;
-				newGame(WinScore);
+				newGame(winScore);
 				timerUpdate.Stop();
 			}
             Invalidate(true);
@@ -174,7 +173,15 @@ namespace Faceball
             {
 				Shoot = true;
             }
-            Invalidate(true);
+			if (e.KeyCode == Keys.Enter && scene.Ball.player == scene.Player2)
+			{
+				Shoot = true;
+			}
+			if (e.KeyCode == Keys.Space && scene.Ball.player == scene.Player1)
+			{
+				Shoot = true;
+			}
+			Invalidate(true);
         }
 
         private void panelScore_Paint(object sender, PaintEventArgs e)

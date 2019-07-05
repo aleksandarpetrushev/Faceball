@@ -76,12 +76,11 @@ namespace Faceball
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Game game = new Game();
+			Game game = new Game(winScore);
 			game.Image1 = image1;
 			game.Image2 = image2;
-			game.WinScore = winScore;
-			this.Close();
-			game.ShowDialog();
+            game.ShowDialog();
+            this.Close();
 		}
 
 		private void button4_Click(object sender, EventArgs e)
