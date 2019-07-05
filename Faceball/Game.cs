@@ -18,6 +18,9 @@ namespace Faceball
         Scene scene;
         string FileName;
 		bool Shoot;
+        public Image Image1 { get; set; }
+        public Image Image2 { get; set; }
+        public int WinScore { get; set; }
 
         public Game()
 		{
@@ -29,12 +32,11 @@ namespace Faceball
 
 		public void newGame()
 		{
-			scene = new Scene(3);
+			scene = new Scene(WinScore);
 			timerUpdate.Start();
 			Invalidate(true);
-			
-
 		}
+
 		private void saveFile()
         {
             if (FileName == null)

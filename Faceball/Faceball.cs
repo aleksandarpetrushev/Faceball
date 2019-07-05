@@ -37,9 +37,10 @@ namespace Faceball
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            this.Close();
+
             ChooseEmoji chooseEmoji = new ChooseEmoji();
             chooseEmoji.ShowDialog();
+            
 			//game = new Game();
 			//game.ShowDialog();
 		}

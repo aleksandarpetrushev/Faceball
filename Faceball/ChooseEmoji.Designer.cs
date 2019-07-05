@@ -41,7 +41,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Faceball.Properties.Resources.tiredEmoji;
-            this.pictureBox4.Location = new System.Drawing.Point(191, 240);
+            this.pictureBox4.Location = new System.Drawing.Point(186, 240);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(118, 75);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,7 +61,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Faceball.Properties.Resources.hahaEmoji;
-            this.pictureBox2.Location = new System.Drawing.Point(521, 240);
+            this.pictureBox2.Location = new System.Drawing.Point(512, 240);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(74, 75);
             this.pictureBox2.TabIndex = 1;
@@ -86,7 +86,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ChooseEmoji";
-            this.Text = "ChooseEmoji";
+            this.Text = "Choose Emoji";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
