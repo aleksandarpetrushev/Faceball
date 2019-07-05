@@ -149,7 +149,7 @@ namespace Faceball
             {
                 scene.Player1.MovingRight = true;
             }
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && scene.Ball.player == scene.Player2) 
             {
 				Shoot = true;
             }
@@ -169,7 +169,7 @@ namespace Faceball
             {
                 scene.Player2.MovingRight = true;
             }
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space && scene.Ball.player == scene.Player1)
             {
 				Shoot = true;
             }
